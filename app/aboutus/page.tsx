@@ -18,7 +18,7 @@ export default function AboutUs() {
           <p className="text-5xl font-bold mb-10 uppercase">About Us</p>
         </div>
       </div>
-      <div className="flex m-20">
+      <div className="flex px-0 md:px-0 xl:px-50 m-20">
         <div className="flex item-center w-250 h-100 rounded-2xl overflow-hidden">
           <img className="w-auto h-full object-cover " src="/img1.jpg" alt="" />
         </div>

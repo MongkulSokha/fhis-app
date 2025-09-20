@@ -20,7 +20,7 @@ export default function Event() {
           <p className="text-5xl font-bold mb-10 uppercase">School Events</p>
         </div>
       </div>
-      <div className="flex m-20 justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3">
+      <div className="px-0 md:px-0 xl:px-50 flex my-20 justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3">
         {cardData.map((card) => (
           <Cards
             key={card.id}

@@ -147,7 +147,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-0 md:mx-0 xl:mx-50 flex flex-col md:flex-row justify-between gap-2 items-center p-20">
+      <div className="mx-20 md:mx-20 xl:mx-50 flex flex-col md:flex-row justify-between gap-2 items-center my-20">
         <div className="flex rounded-rg h-full">
           <Image
             height={715}
