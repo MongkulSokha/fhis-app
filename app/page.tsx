@@ -1,103 +1,201 @@
-import Image from "next/image";
+import "@ant-design/v5-patch-for-react-19";
+import Navbar from "@/components/Navbar";
+import Corousel from "@/components/Corousel";
+import Footers from "@/components/Footers";
+import Cards from "@/components/Cards";
+import { cardData } from "../lib/data";
+import CardSlider from "@/components/CardSlider";
+import { Image } from "antd";
+
+// px-0 md:px-0 xl:px-50
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="App">
+      <Navbar />
+      <Corousel />
+      <div>
+        <div className="px-0 md:px-0 xl:px-50 flex p-20 flex-col text-center items-center">
+          <p className="text-5xl font-semibold pb-5">Welcome to</p>
+          <p className="text-5xl font-bold">FORESTHILL INTERNATIONAL SCHOOL</p>
+          <div className="flex items-center h-1 bg-red-900 mt-10 w-65"></div>
+          <p className="text-2xl pt-9 ">
+            Activities of students taking the September Monthly Test for
+            National Program in the Academic Year 2022-2023 at Forest Hill
+            International School
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </div>
+
+      <div className="">
+        <div className="px-0 md:px-0 xl:px-50 bg-red-900 flex justify-center p-20 flex-col text-center">
+          <p className=" text-yellow-600 text-2xl font-semibold">
+            SCHOOL MANAGEMENT
+          </p>
+          <CardSlider />
+        </div>
+      </div>
+
+      <div className="px-0 md:px-0 xl:px-50">
+        <div className=" flex pt-20 px-20 flex-col text-center items-center">
+          <p className="text-2xl font-bold uppercase">Why Choose Us</p>
+          <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
+          <p className="text-1xl pt-3 ">
+            We offer an affordable, quality education with Trilingual
+            Curriculums: English, Khmer and Chinese
+          </p>
+        </div>
+        <div className="flex flex-col px-20 py-10 justify-between gap-5 pb-20 md:flex-row">
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7">
+            <img className="w-23 pe-4" src="/book.svg" alt="" />
+            <div>
+              <p className="text-black font-semibold">Books & Library</p>
+              <p className="text-black text-sm">
+                If you are going to use a passage of Lorem Ipsum, you need to be
+                sure there isn't anything embarrassing hidden in the middle of
+                text
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7">
+            <img className="w-23 pe-4" src="/sports.svg" alt="" />
+            <div>
+              <p className="text-black font-semibold">Learn Courses Online</p>
+              <p className="text-black text-sm">
+                If you are going to use a passage of Lorem Ipsum, you need to be
+                sure there isn't anything embarrassing hidden in the middle of
+                text
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7">
+            <img className="w-23 pe-4" src="/learn.svg" alt="" />
+            <div>
+              <p className="text-black font-semibold">Sports</p>
+              <p className="text-black text-sm">
+                If you are going to use a passage of Lorem Ipsum, you need to be
+                sure there isn't anything embarrassing hidden in the middle of
+                text
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-center flex-row md:flex-col text-center">
+        <div className="flex relative h-270 md:h-90">
+          <img
+            className="w-full h-auto object-cover"
+            src="/counter_bg.jpeg"
+            alt=""
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <div className="flex absolute inset-0 items-center justify-center text-white bg-gray-900 opacity-75 flex-col md:flex-row p-20 justify-between gap-20">
+            <div className="flex flex-col px-10">
+              <img className="h-30" src="/students.svg" alt="" />
+              <p className="font-bold text-2xl">1800+</p>
+              <p>Students</p>
+            </div>
+            <div className="flex flex-col px-10">
+              <img className="h-30" src="/course.svg" alt="" />
+              <p className="font-bold text-2xl">70</p>
+              <p>Courses</p>
+            </div>
+            <div className="flex flex-col px-10">
+              <img className="h-30" src="/teacher.svg" alt="" />
+              <p className="font-bold text-2xl">700+</p>
+              <p>Certified Teachers</p>
+            </div>
+            <div className="flex flex-col px-10">
+              <img className="h-30" src="/award.svg" alt="" />
+              <p className="font-bold text-2xl">1200+</p>
+              <p>Winning Award</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="flex pt-20 px-20 flex-col text-center items-center">
+          <p className="text-2xl font-bold uppercase">Upcoming Events</p>
+          <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
+        </div>
+      </div>
+
+      <div className="mx-20 md:mx-20 xl:mx-50 my-20 flex justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3">
+        {cardData.map((card) => (
+          <Cards
+            key={card.id}
+            title={card.title}
+            img={card.img}
+            date={card.date}
+            time={card.time}
+            location={card.location}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        ))}
+      </div>
+
+      <div>
+        <div className="bg-gray-100 flex justify-center p-20 flex-col text-center h-90">
+          <p className=" text-black text-4xl font-semibold">CURRICULUM</p>
+        </div>
+      </div>
+
+      <div className="">
+        <div className="flex pt-20 px-20 flex-col text-center items-center">
+          <p className="text-2xl font-bold uppercase">Gallery</p>
+          <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
+        </div>
+      </div>
+
+      <div className="mx-0 md:mx-0 xl:mx-50 flex flex-col md:flex-row justify-between gap-2 items-center p-20">
+        <div className="flex rounded-rg h-full">
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+            height={715}
+            className="object-cover  w-auto rounded-xl"
+            src="/promote.jpg"
+            alt=""
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+        <div className="flex flex-col justify-between gap-1">
+          <div className="flex flex-row justify-between gap-2">
+            <div>
+              <Image
+                height={350}
+                className="h-70 w-auto rounded-lg object-cover"
+                src="/img4.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <Image
+                height={350}
+                className="h-70 w-auto rounded-lg object-cover"
+                src="/img3.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex flex-row justify-between gap-2">
+            <div>
+              <Image
+                height={350}
+                className="h-70 w-auto rounded-lg object-cover"
+                src="/img4.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <Image
+                height={350}
+                className="h-70 w-auto rounded-lg object-cover"
+                src="/img3.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footers />
+    </main>
   );
 }
