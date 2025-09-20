@@ -181,6 +181,7 @@ const Navbar: React.FC = () => {
           mode="horizontal"
           selectedKeys={select}
           items={items}
+          style={{ flex: 1, minWidth: 0 }}
         />
       </Header>
     </Layout>

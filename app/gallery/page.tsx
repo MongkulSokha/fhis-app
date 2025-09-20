@@ -19,7 +19,7 @@ export default function Gallery() {
           <p className="text-5xl font-bold mb-10 uppercase">Gallery</p>
         </div>
       </div>
-      <div className="px-0 md:px-0 xl:px-50 flex flex-col md:flex-row justify-between gap-2 items-center py-20">
+      <div className="px-10 md:px-10 xl:px-50 flex flex-col md:flex-row justify-between gap-2 items-center py-20">
         <div className="flex rounded-rg h-full">
           <Image
             height={715}

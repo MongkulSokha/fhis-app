@@ -18,12 +18,12 @@ export default function AboutUs() {
           <p className="text-5xl font-bold mb-10 uppercase">About Us</p>
         </div>
       </div>
-      <div className="flex px-0 md:px-0 xl:px-50 m-20">
-        <div className="flex item-center w-250 h-100 rounded-2xl overflow-hidden">
+      <div className="flex px-10 md:px-10 xl:px-50 flex-col md:flex-row py-10">
+        <div className="flex item-center w-full h-100 rounded-2xl overflow-hidden me-10">
           <img className="w-auto h-full object-cover " src="/img1.jpg" alt="" />
         </div>
-        <div className="mx-10">
-          <p className="text-4xl font-bold mb-5">About Us</p>
+        <div className="">
+          <p className="text-4xl font-bold mb-5 mt-5">About Us</p>
           <p className="text-2xl line-clamp-5">
             "The education of even a small child, therefore, does not aim at
             preparing him for school, but for life."
