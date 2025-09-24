@@ -7,8 +7,6 @@ import { cardData } from "../lib/data";
 import CardSlider from "@/components/CardSlider";
 import { Image } from "antd";
 
-// px-0 md:px-0 xl:px-50
-
 export default function Home() {
   return (
     <main className="App">

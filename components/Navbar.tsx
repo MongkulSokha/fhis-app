@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { Layout, Menu, theme } from "antd";
+import { Affix, Layout, Menu, theme } from "antd";
 import type { MenuProps } from "antd";
 import { PhoneFilled, MailFilled, DownOutlined } from "@ant-design/icons";
 import Link from "next/link";
@@ -168,24 +168,34 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </Header>
-      <Header
-        className="mx-0 md:mx-0 xl:mx-50"
-        style={{
-          backgroundColor: "#570614ff",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Menu
-          className="uppercase font-medium"
-          theme="light"
-          onClick={onClick}
-          mode="horizontal"
-          selectedKeys={select}
-          items={items}
-          style={{ flex: 1, minWidth: 0 }}
-        />
-      </Header>
+
+      <Affix offsetTop={0}>
+        <Header
+          style={{
+            backgroundColor: "#570614ff",
+            padding: 0,
+          }}
+        >
+          <Header
+            className="mx-0 md:mx-0 xl:mx-50"
+            style={{
+              backgroundColor: "#570614ff",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Menu
+              className="uppercase font-medium"
+              theme="light"
+              onClick={onClick}
+              mode="horizontal"
+              selectedKeys={select}
+              items={items}
+              style={{ flex: 1, minWidth: 0 }}
+            />
+          </Header>
+        </Header>
+      </Affix>
     </Layout>
   );
 };
