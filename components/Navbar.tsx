@@ -150,18 +150,20 @@ const Navbar: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col text-black md:flex-col lg:flex-row">
-            <div className="flex text-black ms-3">
-              <div className="h-5">
-                <PhoneFilled />
+          <div className="flex text-black hidden md:block sm:block">
+            <div className="flex flex-col lg:flex-row md:flex-col sm:flex-col ">
+              <div className="flex text-black ms-3">
+                <div className="h-5">
+                  <PhoneFilled />
+                </div>
+                <p className="px-3 pe-5">(+855) 17 388 884</p>
               </div>
-              <p className="px-3">(+855) 17 388 884</p>
-            </div>
-            <div className="flex text-black ms-3">
-              <div className="h-5">
-                <MailFilled />
+              <div className="flex text-black ">
+                <div className="h-5">
+                  <MailFilled />
+                </div>
+                <p className="ps-3">infor@foresthillschool.edu.kh</p>
               </div>
-              <p className="px-3">infor@foresthillschool.edu.kh</p>
             </div>
           </div>
         </div>

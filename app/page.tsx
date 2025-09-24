@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
       <Corousel />
       <div>
-        <div className="px-0 md:px-0 xl:px-50 flex p-20 flex-col text-center items-center">
+        <div className="px-20 md:px-20 xl:px-50 flex p-20 flex-col text-center items-center">
           <p className="text-5xl font-semibold pb-5">Welcome to</p>
           <p className="text-5xl font-bold">FORESTHILL INTERNATIONAL SCHOOL</p>
           <div className="flex items-center h-1 bg-red-900 mt-10 w-65"></div>
@@ -28,7 +28,7 @@ export default function Home() {
       </div>
 
       <div className="">
-        <div className="px-0 md:px-0 xl:px-50 bg-red-900 flex justify-center p-20 flex-col text-center">
+        <div className="px-20 md:px-20 xl:px-50 bg-red-900 flex justify-center p-20 flex-col text-center">
           <p className=" text-yellow-600 text-2xl font-semibold">
             SCHOOL MANAGEMENT
           </p>
@@ -161,7 +161,7 @@ export default function Home() {
             <div>
               <Image
                 height={350}
-                className="h-70 w-auto rounded-lg object-cover"
+                className=" w-auto rounded-lg object-cover"
                 src="/img4.jpg"
                 alt=""
               />
