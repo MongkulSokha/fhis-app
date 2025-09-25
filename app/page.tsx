@@ -11,6 +11,7 @@ import { Image } from "antd";
 import { useEffect, useState } from "react";
 import TestimonialCard from "@/components/TestimonialCard";
 import { testimonialData } from "../lib/testimoial";
+import CurriculumSlider from "@/components/CurriculumSlider";
 
 export default function Home() {
   const [showItems, setShowItems] = useState(false);
@@ -162,9 +163,9 @@ export default function Home() {
 
       {/* Curriculum */}
       <div>
-        <div className="bg-gray-100 h-90 flex pt-20 px-20 flex-col text-center items-center">
+        <div className="bg-gray-100 h-full flex flex-col text-center pt-20 px-20">
           <p className="text-2xl font-bold uppercase">Curriculum</p>
-          <div className="flex items-center h-[0.2rem] bg-red-900 mt-3 w-35"></div>
+          <CurriculumSlider />
         </div>
       </div>
 

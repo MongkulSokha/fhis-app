@@ -4,7 +4,7 @@ import React from "react";
 import { Card, Layout, Menu, theme } from "antd";
 import { Carousel } from "antd";
 
-const cardCorousel: React.FC = () => {
+const CurriculumSlider: React.FC = () => {
   const responsiveSettings = [
     {
       breakpoint: 1024, // For screens smaller than 1024px
@@ -37,28 +37,31 @@ const cardCorousel: React.FC = () => {
       responsive={responsiveSettings}
     >
       <div className="flex">
-        <img className="px-1" src="/profile.svg" alt="" />
+        <img className="px-2" src="/hsk.svg" alt="" />
       </div>
-      <div className="">
-        <img className="px-1" src="/profile.svg" alt="" />
+      <div className="flex">
+        <img className="px-2" src="/hsk.svg" alt="" />
       </div>
-      <div className="">
-        <img className="px-1" src="/profile.svg" alt="" />
+      <div className="flex">
+        <img className="px-2" src="/hsk.svg" alt="" />
       </div>
-      <div className="">
-        <img className="px-1" src="/profile.svg" alt="" />
+      <div className="flex">
+        <img className="px-2" src="/hsk.svg" alt="" />
       </div>
-      <div className="">
-        <img className="px-1" src="/profile.svg" alt="" />
+      <div className="flex">
+        <img className="px-2" src="/hsk.svg" alt="" />
       </div>
-      <div className="">
-        <img className="px-1" src="/profile.svg" alt="" />
+      <div className="flex">
+        <img className="px-2" src="/hsk.svg" alt="" />
       </div>
-      <div className="">
-        <img className="px-1" src="/profile.svg" alt="" />
+      <div className="flex">
+        <img className="px-2" src="/hsk.svg" alt="" />
+      </div>
+      <div className="flex">
+        <img className="px-2" src="/hsk.svg" alt="" />
       </div>
     </Carousel>
   );
 };
 
-export default cardCorousel;
+export default CurriculumSlider;
