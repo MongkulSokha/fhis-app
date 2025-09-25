@@ -1,7 +1,6 @@
 import React from "react";
 import Meta from "antd/es/card/Meta";
 import { Card } from "antd";
-import MyCarousel from "./MyOwlCarousel";
 
 const TestimonialCard = ({
   name,
