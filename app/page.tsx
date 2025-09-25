@@ -163,7 +163,7 @@ export default function Home() {
 
       {/* Curriculum */}
       <div>
-        <div className="bg-gray-100 h-full flex flex-col text-center pt-20 px-20">
+        <div className="px-20 md:px-20 xl:px-60 bg-gray-100 h-full flex flex-col text-center pt-20 px-20">
           <p className="text-2xl font-bold uppercase">Curriculum</p>
           <CurriculumSlider />
         </div>
@@ -227,7 +227,7 @@ export default function Home() {
 
       {/* Testimonial */}
       <div>
-        <div className="bg-gray-100 h-full flex pt-20 px-20 flex-col text-center items-center">
+        <div className="px-20 md:px-20 xl:px-60 bg-gray-100 h-full flex pt-20 px-20 flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Testimonial</p>
           <div className="flex items-center h-[0.2rem] bg-red-900 mt-3 w-35"></div>
 
