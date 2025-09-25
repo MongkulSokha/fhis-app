@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 30) {
         setShowItems(true);
       } else {
         setShowItems(false);
@@ -31,9 +31,11 @@ export default function Home() {
     <main className="App">
       <Navbar />
       <Corousel />
+
+      {/* Welcome */}
       <div
         className={`transition-opacity duration-1000 ease-in-out ${
-          showItems ? "opacity-100" : "opacity-0"
+          showItems ? "opacity-100" : "opacity-20"
         }`}
       >
         <div className="px-20 md:px-20 xl:px-50 flex p-20 flex-col text-center items-center ">
@@ -48,8 +50,9 @@ export default function Home() {
         </div>
       </div>
 
+      {/* School Management */}
       <div className="">
-        <div className="px-20 md:px-20 xl:px-50 bg-red-900 flex justify-center p-20 flex-col text-center">
+        <div className="px-20 md:px-20 xl:px-60 bg-red-900 flex justify-center p-20 flex-col text-center">
           <p className=" text-yellow-600 text-2xl font-semibold">
             SCHOOL MANAGEMENT
           </p>
@@ -57,6 +60,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Why Choose us? */}
       <div className="px-0 md:px-0 xl:px-50">
         <div className=" flex pt-20 px-20 flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Why Choose Us</p>
@@ -67,7 +71,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col px-20 py-10 justify-between gap-5 pb-20 md:flex-row">
-          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7">
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300">
             <img className="w-23 pe-4" src="/book.svg" alt="" />
             <div>
               <p className="text-black font-semibold">Books & Library</p>
@@ -78,7 +82,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7">
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300">
             <img className="w-23 pe-4" src="/sports.svg" alt="" />
             <div>
               <p className="text-black font-semibold">Learn Courses Online</p>
@@ -89,7 +93,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7">
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300">
             <img className="w-23 pe-4" src="/learn.svg" alt="" />
             <div>
               <p className="text-black font-semibold">Sports</p>
@@ -103,58 +107,60 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Counter */}
       <div className="flex justify-center flex-row md:flex-col text-center">
-        <div className="flex relative h-270 md:h-90">
+        <div className="flex relative h-320 md:h-90">
           <img
             className="w-full h-auto object-cover"
             src="/counter_bg.jpeg"
             alt=""
           />
-          <div className="flex absolute inset-0 items-center justify-center text-white bg-gray-900 opacity-75 flex-col md:flex-row p-20 justify-between gap-20">
-            <div className="flex flex-col px-10">
-              <img className="h-30" src="/students.svg" alt="" />
-              <p className="font-bold text-2xl">1800+</p>
+          <div className="flex absolute inset-0 items-center justify-center text-white bg-gray-900 opacity-75 flex-col md:flex-row p-20 justify-between gap-20 md:gap-20 lg:gap-40">
+            <div className="flex flex-col">
+              <img className="h-40" src="/students.svg" alt="" />
+              <p className="font-bold text-3xl">1800+</p>
               <p>Students</p>
             </div>
-            <div className="flex flex-col px-10">
-              <img className="h-30" src="/course.svg" alt="" />
-              <p className="font-bold text-2xl">70</p>
+            <div className="flex flex-col">
+              <img className="h-40" src="/courses.svg" alt="" />
+              <p className="font-bold text-3xl">70</p>
               <p>Courses</p>
             </div>
-            <div className="flex flex-col px-10">
-              <img className="h-30" src="/teacher.svg" alt="" />
-              <p className="font-bold text-2xl">700+</p>
+            <div className="flex flex-col">
+              <img className="h-40" src="/certified.svg" alt="" />
+              <p className="font-bold text-3xl">700+</p>
               <p>Certified Teachers</p>
             </div>
-            <div className="flex flex-col px-10">
-              <img className="h-30" src="/award.svg" alt="" />
-              <p className="font-bold text-2xl">1200+</p>
+            <div className="flex flex-col">
+              <img className="h-40" src="/awards.svg" alt="" />
+              <p className="font-bold text-3xl">1200+</p>
               <p>Winning Award</p>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Upcoming Events */}
       <div>
         <div className="flex pt-20 px-20 flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Upcoming Events</p>
           <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
         </div>
+        <div className="mx-20 md:mx-20 xl:mx-60 my-20 flex justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3">
+          {cardData.slice(0, 6).map((card) => (
+            <Cards
+              key={card.id}
+              title={card.title}
+              img={card.img}
+              date={card.date}
+              time={card.time}
+              location={card.location}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="mx-20 md:mx-20 xl:mx-60 my-20 flex justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3">
-        {cardData.slice(0, 6).map((card) => (
-          <Cards
-            key={card.id}
-            title={card.title}
-            img={card.img}
-            date={card.date}
-            time={card.time}
-            location={card.location}
-          />
-        ))}
-      </div>
-
+      {/* Curriculum */}
       <div>
         <div className="bg-gray-100 h-90 flex pt-20 px-20 flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Curriculum</p>
@@ -162,62 +168,63 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Gallery */}
       <div className="">
         <div className="flex pt-20 px-20 flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Gallery</p>
           <div className="flex items-center h-[0.2rem] bg-red-900 mt-3 w-25"></div>
         </div>
-      </div>
-
-      <div className="mx-20 md:mx-20 xl:mx-60 flex flex-col md:flex-row justify-between gap-2 items-center my-20">
-        <div className="flex rounded-rg h-full">
-          <Image
-            height={715}
-            className="object-cover  w-auto rounded-xl"
-            src="/promote.jpg"
-            alt=""
-          />
-        </div>
-        <div className="flex flex-col justify-between gap-1">
-          <div className="flex flex-row justify-between gap-2">
-            <div>
-              <Image
-                height={350}
-                className=" w-auto rounded-lg object-cover"
-                src="/img4.jpg"
-                alt=""
-              />
+        <div className="mx-20 md:mx-20 xl:mx-60 flex flex-col md:flex-row justify-between gap-2 items-center my-20">
+          <div className="flex rounded-lg h-full ">
+            <Image
+              height={715}
+              className="object-cover w-auto rounded-lg"
+              src="/promote.jpg"
+              alt=""
+            />
+          </div>
+          <div className="flex flex-col justify-between gap-1">
+            <div className="flex flex-row justify-between gap-2">
+              <div>
+                <Image
+                  height={350}
+                  className=" w-auto rounded-lg object-cover"
+                  src="/img4.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <Image
+                  height={350}
+                  className="h-70 w-auto rounded-lg object-cover"
+                  src="/img3.jpg"
+                  alt=""
+                />
+              </div>
             </div>
-            <div>
-              <Image
-                height={350}
-                className="h-70 w-auto rounded-lg object-cover"
-                src="/img3.jpg"
-                alt=""
-              />
+            <div className="flex flex-row justify-between gap-2">
+              <div>
+                <Image
+                  height={350}
+                  className="h-70 w-auto rounded-lg object-cover"
+                  src="/img4.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <Image
+                  height={350}
+                  className="h-70 w-auto rounded-lg object-cover"
+                  src="/img3.jpg"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
-          <div className="flex flex-row justify-between gap-2">
-            <div>
-              <Image
-                height={350}
-                className="h-70 w-auto rounded-lg object-cover"
-                src="/img4.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <Image
-                height={350}
-                className="h-70 w-auto rounded-lg object-cover"
-                src="/img3.jpg"
-                alt=""
-              />
-            </div>
-          </div>
         </div>
       </div>
 
+      {/* Testimonial */}
       <div>
         <div className="bg-gray-100 h-full flex pt-20 px-20 flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Testimonial</p>
@@ -236,6 +243,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <Footers />
     </main>
   );
