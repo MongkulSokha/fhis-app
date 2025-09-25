@@ -32,7 +32,7 @@ const Cards = ({
           }}
           cover={
             <img
-              className="h-80 w-full object-cover"
+              className="h-60 sm:h-80 w-full object-cover"
               draggable={false}
               alt="example"
               src={img}
@@ -45,17 +45,19 @@ const Cards = ({
               <>
                 <div className="flex flex-col justify-between gap-2">
                   <div className="flex flex-row justify-between gap-3">
-                    <p className="text-black">
+                    <p className="text-black text-xs sm:text-base">
                       <CalendarOutlined className="me-2" />
                       {date}
                     </p>
-                    <p className="flex text-black">
+                    <p className="flex text-black text-xs sm:text-base">
                       {time} <ClockCircleOutlined className="ms-2" />
                     </p>
                   </div>
 
-                  <p className="text-black text-xl font-semibold">{title}</p>
-                  <p className="text-red-900 font-semibold ">
+                  <p className="text-black text-lg sm:text-xl font-semibold">
+                    {title}
+                  </p>
+                  <p className="text-red-900 font-semibold text-xs sm:text-base">
                     <EnvironmentOutlined /> {location}
                   </p>
                 </div>
