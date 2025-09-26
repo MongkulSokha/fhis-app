@@ -84,7 +84,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300 transition-transform duration-300 ease-in-out hover:translate-y-1">
-            <img className="w-23 pe-4" src="/sports.svg" alt="" />
+            <img className="w-23 pe-4" src="/learn.svg" alt="" />
             <div>
               <p className="text-black font-semibold">Learn Courses Online</p>
               <p className="text-black text-sm">
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300 transition-transform duration-300 ease-in-out hover:translate-y-1">
-            <img className="w-23 pe-4" src="/learn.svg" alt="" />
+            <img className="w-23 pe-4" src="/sports.svg" alt="" />
             <div>
               <p className="text-black font-semibold">Sports</p>
               <p className="text-black text-sm">

@@ -25,6 +25,20 @@ body {
   }
 }
 
-.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
-  color: blue;
+.ant-input {
+  color: black !important;
+  border-color: white !important;
+}
+
+.ant-input::placeholder {
+  color: #000000ff !important;
+  font-size: medium;
+  opacity: 1;
+  border-color: white !important;
+}
+
+.ant-btn {
+  background-color: rgb(255, 190, 49) !important;
+  color: white !important;
+  border-color: white !important;
 }
