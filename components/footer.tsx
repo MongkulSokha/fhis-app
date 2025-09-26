@@ -24,7 +24,7 @@ const Footers: React.FC = () => {
           flexGrow: 1,
         }}
       >
-        <div className="flex flex-col md:flex-row justify-between gap-20 md:gap-50 px-10 md:px-10 xl:px-60">
+        <div className="flex flex-col md:flex-row gap-20 md:gap-50 px-10 md:px-10 xl:px-60">
           <div>
             <div className="flex ">
               <Link href="/">
@@ -43,7 +43,7 @@ const Footers: React.FC = () => {
           </div>
           <div className="flex flex-col pt-5">
             <div className="flex flex-col text-start pb-15">
-              <p className="text-sm pb-2">TRILNGUAL CURRICULUM</p>
+              <p className="text-sm pb-2 font-medium">TRILNGUAL CURRICULUM</p>
               <img className="w-50" src="/flags.svg" alt="" />
             </div>
             <div className="flex flex-col text-start">
@@ -52,7 +52,7 @@ const Footers: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col pt-5">
-            <div className="flex flex-col text-start pb-10 justify-between gap-2">
+            <div className="flex flex-col text-start pb-10 gap-2">
               <p>Subscribe Newsletter</p>
               <p className="text-xs">
                 Please subscribe our website to get school information

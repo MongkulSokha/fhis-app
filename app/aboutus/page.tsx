@@ -1,6 +1,6 @@
 import "@ant-design/v5-patch-for-react-19";
-import Navbar from "@/components/Navbar";
-import Footers from "@/components/Footers";
+import Navbar from "@/components/navbars";
+import Footers from "@/components/footer";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
