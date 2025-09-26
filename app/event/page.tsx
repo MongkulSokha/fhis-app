@@ -2,7 +2,7 @@ import "@ant-design/v5-patch-for-react-19";
 import Navbar from "@/components/Navbar";
 import Footers from "@/components/Footers";
 import { cardData } from "@/lib/data";
-import Cards from "@/components/Cards";
+import Cards from "@/components/EventCard";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,

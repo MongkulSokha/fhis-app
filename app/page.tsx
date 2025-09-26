@@ -4,9 +4,9 @@ import "@ant-design/v5-patch-for-react-19";
 import Navbar from "@/components/Navbar";
 import Corousel from "@/components/Corousel";
 import Footers from "@/components/Footers";
-import Cards from "@/components/Cards";
+import Cards from "@/components/EventCard";
 import { cardData } from "../lib/data";
-import CardSlider from "@/components/CardSlider";
+import CardSlider from "@/components/ProfileSlider";
 import { Image } from "antd";
 import { useEffect, useState } from "react";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -72,7 +72,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col px-20 py-10 justify-between gap-5 pb-20 md:flex-row">
-          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300">
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300 transition-transform duration-300 ease-in-out hover:translate-y-1">
             <img className="w-23 pe-4" src="/book.svg" alt="" />
             <div>
               <p className="text-black font-semibold">Books & Library</p>
@@ -83,7 +83,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300">
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300 transition-transform duration-300 ease-in-out hover:translate-y-1">
             <img className="w-23 pe-4" src="/sports.svg" alt="" />
             <div>
               <p className="text-black font-semibold">Learn Courses Online</p>
@@ -94,7 +94,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300">
+          <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300 transition-transform duration-300 ease-in-out hover:translate-y-1">
             <img className="w-23 pe-4" src="/learn.svg" alt="" />
             <div>
               <p className="text-black font-semibold">Sports</p>
@@ -109,31 +109,26 @@ export default function Home() {
       </div>
 
       {/* Counter */}
-      <div className="flex justify-center flex-row md:flex-col text-center">
-        <div className="flex relative h-320 md:h-90">
-          <img
-            className="w-full h-auto object-cover"
-            src="/counter_bg.jpeg"
-            alt=""
-          />
-          <div className="flex absolute inset-0 items-center justify-center text-white bg-gray-900 opacity-75 flex-col md:flex-row p-20 justify-between gap-20 md:gap-20 lg:gap-40">
+      <div className="flex justify-center flex-row md:flex-col text-center bg-[url(/counter_bg.jpeg)] bg-fixed ">
+        <div className="bg-gray-900 opacity-70 w-full">
+          <div className="flex h-320 md:h-90  items-center justify-center text-white flex-col md:flex-row p-20 justify-between gap-20 md:gap-20 lg:gap-40">
             <div className="flex flex-col">
-              <img className="h-40" src="/students.svg" alt="" />
+              <img className="h-35" src="/students.svg" alt="" />
               <p className="font-bold text-3xl">1800+</p>
               <p>Students</p>
             </div>
             <div className="flex flex-col">
-              <img className="h-40" src="/courses.svg" alt="" />
+              <img className="h-35" src="/courses.svg" alt="" />
               <p className="font-bold text-3xl">70</p>
               <p>Courses</p>
             </div>
             <div className="flex flex-col">
-              <img className="h-40" src="/certified.svg" alt="" />
+              <img className="h-35" src="/certified.svg" alt="" />
               <p className="font-bold text-3xl">700+</p>
               <p>Certified Teachers</p>
             </div>
             <div className="flex flex-col">
-              <img className="h-40" src="/awards.svg" alt="" />
+              <img className="h-35" src="/awards.svg" alt="" />
               <p className="font-bold text-3xl">1200+</p>
               <p>Winning Award</p>
             </div>
