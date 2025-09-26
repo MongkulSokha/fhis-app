@@ -41,25 +41,40 @@ const cardCorousel: React.FC = () => {
           slidesToShow={6}
           responsive={responsiveSettings}
         >
-          <div className="flex">
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
             <img className="px-1" src="/profile.svg" alt="" />
           </div>
-          <div className="">
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
             <img className="px-1" src="/profile.svg" alt="" />
           </div>
-          <div className="">
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
             <img className="px-1" src="/profile.svg" alt="" />
           </div>
-          <div className="">
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
             <img className="px-1" src="/profile.svg" alt="" />
           </div>
-          <div className="">
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
             <img className="px-1" src="/profile.svg" alt="" />
           </div>
-          <div className="">
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
             <img className="px-1" src="/profile.svg" alt="" />
           </div>
-          <div className="">
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
+            <img className="px-1" src="/profile.svg" alt="" />
+          </div>
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
+            <img className="px-1" src="/profile.svg" alt="" />
+          </div>
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
+            <img className="px-1" src="/profile.svg" alt="" />
+          </div>
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
+            <img className="px-1" src="/profile.svg" alt="" />
+          </div>
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
+            <img className="px-1" src="/profile.svg" alt="" />
+          </div>
+          <div className="py-5 transition duration-300 ease-in-out hover:scale-105">
             <img className="px-1" src="/profile.svg" alt="" />
           </div>
         </Carousel>

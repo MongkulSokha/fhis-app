@@ -114,39 +114,63 @@ const Navbar: React.FC = () => {
                 Forest Hill International School
               </p>
             </div>
-            <div className="flex mx-10 justify-between gap-2 flex-row flex-1">
+            <div className="flex mx-10 justify-between gap-2 flex-row flex-1 ">
               <Link
                 target="_blank"
                 href="https://www.facebook.com/ForestHillInternational"
               >
-                <img src="/facebook.svg" alt="facebook-icon" />
+                <img
+                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                  src="/facebook.svg"
+                  alt="facebook-icon"
+                />
               </Link>
               <Link
                 target="_blank"
                 href="https://www.youtube.com/channel/UC1dse898ZKr3kLSQvQp4MRg"
               >
-                <img src="/youtube.svg" alt="youtube-icon" />
+                <img
+                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                  src="/youtube.svg"
+                  alt="youtube-icon"
+                />
               </Link>
               <Link
                 target="_blank"
                 href="https://www.linkedin.com/company/forest-hill-international-school/about//"
               >
-                <img src="/linkedin.svg" alt="linkedin-icon" />
+                <img
+                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                  src="/linkedin.svg"
+                  alt="linkedin-icon"
+                />
               </Link>
               <Link target="_blank" href="https://t.me/+tTWr_iK8qT8zZjZl">
-                <img src="/telegram.svg" alt="telegram-icon" />
+                <img
+                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                  src="/telegram.svg"
+                  alt="telegram-icon"
+                />
               </Link>
               <Link
                 target="_blank"
                 href="https://instagram.com/foresthillinternational?igshid=MzRlODBiNWFlZA=="
               >
-                <img src="/instagram.svg" alt="instagram-icon" />
+                <img
+                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                  src="/instagram.svg"
+                  alt="instagram-icon"
+                />
               </Link>
               <Link
                 target="_blank"
                 href="https://www.tiktok.com/@foresthillinternational?is_from_webapp=1&sender_device=pc"
               >
-                <img src="/tiktok.svg" alt="tiktok-icon" />
+                <img
+                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                  src="/tiktok.svg"
+                  alt="tiktok-icon"
+                />
               </Link>
             </div>
           </div>

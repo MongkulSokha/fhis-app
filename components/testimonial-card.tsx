@@ -4,6 +4,14 @@ import React from "react";
 import Meta from "antd/es/card/Meta";
 import { Card } from "antd";
 
+const contentStyle: React.CSSProperties = {
+  backgroundColor: "white",
+  boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
+  border: "none",
+  width: 350,
+  minWidth: 200,
+};
+
 const TestimonialCard = ({
   name,
   img,
@@ -16,14 +24,9 @@ const TestimonialCard = ({
   text: any;
 }) => {
   return (
-    <div className="">
+    <div className="border hover:border-blue-300 rounded transition duration-300 ease-in-out hover:scale-103 cursor-pointer">
       <Card
-        style={{
-          backgroundColor: "white",
-          boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
-          border: "none",
-          width: 350,
-        }}
+        style={contentStyle}
         cover={
           <img
             className="h-40 w-full object-cover"

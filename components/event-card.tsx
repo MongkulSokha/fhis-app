@@ -25,7 +25,7 @@ const Cards = ({
 }) => {
   return (
     <Link href="/">
-      <div className=" transition duration-300 ease-in-out hover:scale-105 cursor-pointer">
+      <div className="border hover:border-blue-300 rounded transition duration-300 ease-in-out hover:scale-104 cursor-pointer">
         <Card
           style={{
             backgroundColor: "white",

@@ -5,10 +5,15 @@ import {
   SidebarInset,
   SidebarProvider,
 } from "@/components/dashboard/ui/sidebar";
+import { redirect } from "next/navigation";
 
 import data from "./data.json";
 
-export default function Page() {
+export default async function Page() {
+  // const session = await auth();
+
+  // if!session?.user?.id) redirect(url:"/login");
+
   return (
     <SidebarProvider
       style={
@@ -31,4 +36,7 @@ export default function Page() {
       </SidebarInset>
     </SidebarProvider>
   );
+}
+function auth() {
+  throw new Error("Function not implemented.");
 }

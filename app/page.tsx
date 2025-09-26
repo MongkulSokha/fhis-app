@@ -30,7 +30,7 @@ export default function Home() {
           <p className="text-2xl font-bold uppercase">Upcoming Events</p>
           <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
         </div>
-        <div className="mx-20 md:mx-20 xl:mx-60 my-20 flex justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3">
+        <div className="mx-20 md:mx-20 xl:mx-60 my-20 flex justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3 ">
           {cardData.slice(0, 6).map((card) => (
             <Cards
               key={card.id}
@@ -50,8 +50,8 @@ export default function Home() {
         <div className="px-20 md:px-20 xl:px-60 bg-gray-100 h-full flex pt-20 px-20 flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Testimonial</p>
           <div className="flex items-center h-[0.2rem] bg-red-900 mt-3 w-35"></div>
-          <div className="w-full mx-20 md:mx-20 xl:mx-60 my-20 flex  overflow-x-auto justify-between gap-6 md:gap-5">
-            {testimonialData.slice(0, 6).map((card) => (
+          <div className="p-5 w-full mx-20 md:mx-20 xl:mx-60 my-20 flex overflow-x-auto justify-between gap-6 md:gap-5">
+            {testimonialData.map((card) => (
               <TestimonialCard
                 key={card.id}
                 name={card.name}
