@@ -47,9 +47,9 @@ export async function createCard(formData: FormData) {
     VALUES (${title}, ${imgUrl}, ${date}, ${location}, ${timeFrame})
   `;
 
-  redirect("/dashboard");
+  revalidatePath("/dashboard");
 
-  return { success: true };
+  redirect("/dashboard");
 }
 
 //Delete card
