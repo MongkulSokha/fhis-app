@@ -1,11 +1,7 @@
-"use client";
-
 import "@ant-design/v5-patch-for-react-19";
 import Navbar from "@/components/navbars";
 import Corousel from "@/components/corousels";
 import Footers from "@/components/footer";
-import Cards from "@/components/event-card";
-import { cardData } from "../lib/data";
 import CardSlider from "@/components/profile-slider";
 import TestimonialCard from "@/components/testimonial-card";
 import { testimonialData } from "../lib/testimoial";
@@ -14,8 +10,11 @@ import Welcome from "@/components/welcome";
 import WhyChooseUs from "@/components/why-choose";
 import Counter from "@/components/counter";
 import Gallerys from "@/components/gallery";
+import { getCardData } from "./action/cardDataAction";
+import CardList from "@/components/cardlist";
 
-export default function Home() {
+export default async function Home() {
+  const cards = await getCardData();
   return (
     <main className="App">
       <Navbar />
@@ -30,18 +29,7 @@ export default function Home() {
           <p className="text-2xl font-bold uppercase">Upcoming Events</p>
           <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
         </div>
-        <div className="mx-20 md:mx-20 xl:mx-60 my-20 flex justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3 ">
-          {cardData.slice(0, 6).map((card) => (
-            <Cards
-              key={card.id}
-              title={card.title}
-              img={card.img}
-              date={card.date}
-              time={card.time}
-              location={card.location}
-            />
-          ))}
-        </div>
+        <CardList cards={cards} />
       </div>
       <CurriculumSlider />
       <Gallerys />

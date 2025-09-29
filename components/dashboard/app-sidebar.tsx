@@ -30,7 +30,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/dashboard/ui/sidebar";
+} from "@/components/ui/sidebar";
 
 const data = {
   user: {

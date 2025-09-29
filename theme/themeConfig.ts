@@ -9,7 +9,7 @@ const theme: ThemeConfig = {
   },
   components: {
     Menu: {
-      colorItemTextSelected: "#000000ff",
+      itemSelectedColor: "#000000ff",
       colorItemBgSelected: "#ffffffff",
     },
   },

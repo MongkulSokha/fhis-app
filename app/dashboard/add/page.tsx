@@ -1,15 +1,10 @@
 import { AppSidebar } from "@/components/dashboard/app-sidebar";
 import { SiteHeader } from "@/components/dashboard/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { createCard, getCardData } from "../action/cardDataAction";
-import TableData from "@/components/dashboard/table-data";
-import { Button } from "@/components/ui/button";
-import { IconPlus } from "@tabler/icons-react";
-import Link from "next/link";
+import CardForm from "@/components/card-form";
+import { createCard } from "@/app/action/cardDataAction";
 
-export default async function Page() {
-  const cards = await getCardData();
-
+export default function AddCardPage() {
   return (
     <SidebarProvider
       style={
@@ -23,20 +18,12 @@ export default async function Page() {
         <div className="flex flex-1 flex-col">
           <div className="@container/main flex flex-1 flex-col gap-2">
             <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6 p-5">
-              <Link href="/dashboard/add">
-                <Button variant="outline" size="sm">
-                  <IconPlus />
-                  <span className="hidden lg:inline">Add Section</span>
-                </Button>
-              </Link>
-              <TableData />
+              <h1 className="text-2xl font-bold">Add a New Card</h1>
+              <CardForm createCard={createCard} />
             </div>
           </div>
         </div>
       </SidebarInset>
     </SidebarProvider>
   );
-}
-function auth() {
-  throw new Error("Function not implemented.");
 }
