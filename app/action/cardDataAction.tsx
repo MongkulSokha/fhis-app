@@ -53,6 +53,7 @@ export async function createCard(formData: FormData) {
 }
 
 //Delete card
+// Delete card
 export async function deleteCard(id: number) {
   if (!id) throw new Error("ID is required to delete a card");
 
@@ -64,11 +65,13 @@ export async function deleteCard(id: number) {
 
   if (!card) throw new Error("Card not found");
 
-  // Delete the image file from /public if it exists
+  // Delete the image file from Vercel Blob
   if (card.img) {
     try {
-      await del(card.img); // Pass the full blob URL stored in DB
-      console.log(`Deleted blob: ${card.img}`);
+      const blobUrl = new URL(card.img);
+      const key = blobUrl.pathname.slice(1); // Extract "cards/filename.png"
+      await del(key);
+      console.log(`Deleted blob: ${key}`);
     } catch (err) {
       console.error("Error deleting blob:", err);
     }
@@ -81,7 +84,7 @@ export async function deleteCard(id: number) {
     RETURNING *;
   `;
 
-  revalidatePath("/");
+  revalidatePath("/dashboard");
 
   return result;
 }
