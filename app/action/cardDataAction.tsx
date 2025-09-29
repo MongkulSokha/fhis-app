@@ -3,8 +3,7 @@
 import { neon } from "@neondatabase/serverless";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { put } from "@vercel/blob";
-import { del } from "@vercel/blob";
+import { put, del } from "@vercel/blob";
 
 const sql = neon(process.env.DATABASE_URL!);
 
@@ -24,11 +23,14 @@ function formatTime12Hour(time24: string) {
 // Insert new cards
 export async function createCard(formData: FormData) {
   const title = formData.get("title") as string;
+  const imgFile = formData.get("img") as File;
   const date = formData.get("date") as string;
   const location = formData.get("location") as string;
-  const time = formData.get("time") as string;
-
-  const imgFile = formData.get("img") as File;
+  const startTime = formData.get("startTime") as string;
+  const endTime = formData.get("endTime") as string;
+  const timeFrame = `${formatTime12Hour(startTime)} - ${formatTime12Hour(
+    endTime
+  )}`;
 
   let imgUrl: string | null = null;
 
@@ -42,7 +44,7 @@ export async function createCard(formData: FormData) {
 
   await sql`
     INSERT INTO carddata (title, img, date, location, time)
-    VALUES (${title}, ${imgUrl}, ${date}, ${location}, ${time})
+    VALUES (${title}, ${imgUrl}, ${date}, ${location}, ${timeFrame})
   `;
 
   redirect("/dashboard");

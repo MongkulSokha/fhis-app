@@ -17,10 +17,10 @@ const TableData = async () => {
 
   return (
     <Table className="">
-      <TableCaption>Card Data</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Title</TableHead>
+          <TableHead>Image</TableHead>
           <TableHead>Date</TableHead>
           <TableHead>Time</TableHead>
           <TableHead>Location</TableHead>
@@ -31,6 +31,9 @@ const TableData = async () => {
         {cards.map((card, idx) => (
           <TableRow key={idx}>
             <TableCell className="font-medium">{card.title}</TableCell>
+            <TableCell>
+              <img className="h-20" src={card.img} alt="" />
+            </TableCell>
             <TableCell>{card.date}</TableCell>
             <TableCell>{card.time}</TableCell>
             <TableCell>{card.location}</TableCell>
