@@ -3,6 +3,8 @@ import Navbar from "@/components/navbars";
 import Footers from "@/components/footer";
 import { cardData } from "@/lib/data";
 import Cards from "@/components/event-card";
+import CardList from "@/components/cardlist";
+import { getCardData } from "../action/cardDataAction";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
@@ -10,7 +12,8 @@ const contentStyle: React.CSSProperties = {
   objectFit: "cover",
 };
 
-export default function Event() {
+export default async function Event() {
+  const cards = await getCardData();
   return (
     <main className="App">
       <Navbar />
@@ -20,18 +23,7 @@ export default function Event() {
           <p className="text-5xl font-bold mb-10 uppercase">School Events</p>
         </div>
       </div>
-      <div className="px-10 md:px-10 xl:px-60 flex my-20 justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3">
-        {cardData.map((card) => (
-          <Cards
-            key={card.id}
-            title={card.title}
-            img={card.img}
-            date={card.date}
-            time={card.time}
-            location={card.location}
-          />
-        ))}
-      </div>
+      <CardList cards={cards} />
       <Footers />
     </main>
   );

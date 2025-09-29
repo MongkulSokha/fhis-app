@@ -1,8 +1,6 @@
-import { AppSidebar } from "@/components/dashboard/app-sidebar";
-import { SiteHeader } from "@/components/dashboard/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import CardForm from "@/components/dashboard/card-form";
 import { createCard } from "@/app/action/cardDataAction";
+import CardForm from "@/components/dashboard/card-form";
 
 export default function AddCardPage() {
   return (
