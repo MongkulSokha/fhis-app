@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
-import { Card, CardContent } from "./ui/card";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 
 export default function CardForm({
   createCard,
@@ -24,11 +24,13 @@ export default function CardForm({
               required
               className="border p-2 w-full"
             />
+            <Label htmlFor="picture">Picture</Label>
             <Input
-              type="text"
+              id="picture"
+              type="file"
               name="img"
-              placeholder="Image URL"
-              className="border p-2 w-full"
+              accept="image/*"
+              className="border w-full"
             />
             <Input
               type="date"

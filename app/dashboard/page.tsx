@@ -26,7 +26,7 @@ export default async function Page() {
               <Link href="/dashboard/add">
                 <Button variant="outline" size="sm">
                   <IconPlus />
-                  <span className="hidden lg:inline">Add Section</span>
+                  <span className="hidden lg:inline">Add Card</span>
                 </Button>
               </Link>
               <TableData />
