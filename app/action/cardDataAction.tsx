@@ -3,9 +3,8 @@
 import { neon } from "@neondatabase/serverless";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { writeFile } from "fs/promises";
-import path from "path";
-import fs from "fs/promises";
+import { put } from "@vercel/blob";
+import { del } from "@vercel/blob";
 
 const sql = neon(process.env.DATABASE_URL!);
 
@@ -25,35 +24,30 @@ function formatTime12Hour(time24: string) {
 // Insert new cards
 export async function createCard(formData: FormData) {
   const title = formData.get("title") as string;
-  const file = formData.get("img") as File | null;
   const date = formData.get("date") as string;
   const location = formData.get("location") as string;
-  const startTime = formData.get("startTime") as string;
-  const endTime = formData.get("endTime") as string;
-  const timeFrame = `${formatTime12Hour(startTime)} - ${formatTime12Hour(
-    endTime
-  )}`;
+  const time = formData.get("time") as string;
 
-  let imgPath = null;
+  const imgFile = formData.get("img") as File;
 
-  if (file) {
-    // Save file to /public/uploads
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
+  let imgUrl: string | null = null;
 
-    const fileName = `${Date.now()}-${file.name}`;
-    const filePath = path.join(process.cwd(), "public", "uploads", fileName);
-
-    await writeFile(filePath, buffer);
-    imgPath = `/uploads/${fileName}`;
+  if (imgFile && imgFile.size > 0) {
+    // Upload file to Vercel Blob
+    const { url } = await put(`cards/${Date.now()}-${imgFile.name}`, imgFile, {
+      access: "public", // allows public URL access
+    });
+    imgUrl = url;
   }
 
   await sql`
     INSERT INTO carddata (title, img, date, location, time)
-    VALUES (${title}, ${imgPath}, ${date}, ${location}, ${timeFrame})
+    VALUES (${title}, ${imgUrl}, ${date}, ${location}, ${time})
   `;
 
   redirect("/dashboard");
+
+  return { success: true };
 }
 
 //Delete card
@@ -70,14 +64,11 @@ export async function deleteCard(id: number) {
 
   // Delete the image file from /public if it exists
   if (card.img) {
-    const imgPath = path.join(process.cwd(), "public", "uploads", card.img);
     try {
-      await fs.unlink(imgPath);
-      console.log(`Deleted file: ${imgPath}`);
-    } catch (err: any) {
-      if (err.code !== "ENOENT") {
-        console.error("Error deleting file:", err);
-      }
+      await del(card.img); // Pass the full blob URL stored in DB
+      console.log(`Deleted blob: ${card.img}`);
+    } catch (err) {
+      console.error("Error deleting blob:", err);
     }
   }
 
