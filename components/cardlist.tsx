@@ -1,11 +1,18 @@
 "use client";
 
+import useSWR from "swr";
 import Cards from "./event-card";
 
-export default function CardList({ cards }: { cards: any[] }) {
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+export default function CardList() {
+  const { data: cards, mutate } = useSWR("/api/cards", fetcher);
+
+  if (!cards) return <p>Loading...</p>;
+
   return (
-    <div className="mx-20 md:mx-20 xl:mx-60 my-20 flex justify-between gap-6 md:gap-5 flex-col md:flex-row grid grid-cols-1 md:grid-cols-3 ">
-      {cards.slice(0, 6).map((card, idx) => (
+    <div className="mx-20 md:mx-20 xl:mx-60 my-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {cards.slice(0, 6).map((card: any, idx: number) => (
         <Cards
           key={idx}
           title={card.title}

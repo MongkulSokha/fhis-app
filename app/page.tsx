@@ -13,6 +13,8 @@ import Gallerys from "@/components/gallery";
 import { getCardData } from "./action/cardDataAction";
 import CardList from "@/components/cardlist";
 
+export const dynamic = "force-dynamic"; // important!
+
 export default async function Home() {
   const cards = await getCardData();
   return (
@@ -29,7 +31,7 @@ export default async function Home() {
           <p className="text-2xl font-bold uppercase">Upcoming Events</p>
           <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
         </div>
-        <CardList cards={cards} />
+        <CardList />
       </div>
       <CurriculumSlider />
       <Gallerys />
