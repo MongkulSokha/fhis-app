@@ -1,14 +1,11 @@
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "@ant-design/v5-patch-for-react-19";
 import theme from "@/theme/themeConfig";
+import "../globals.css";
 import { ConfigProvider } from "antd";
 import { AppSidebar } from "@/components/dashboard/app-sidebar";
 import { SiteHeader } from "@/components/dashboard/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import TableData from "@/components/dashboard/table-data";
-import { Button } from "@/components/ui/button";
-import { IconPlus } from "@tabler/icons-react";
-import Link from "next/link";
 
 export default function DashboardLayout({
   children,
