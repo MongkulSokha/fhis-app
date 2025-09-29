@@ -10,13 +10,11 @@ import Welcome from "@/components/welcome";
 import WhyChooseUs from "@/components/why-choose";
 import Counter from "@/components/counter";
 import Gallerys from "@/components/gallery";
-import { getCardData } from "./action/cardDataAction";
 import CardList from "@/components/cardlist";
 
 export const dynamic = "force-dynamic"; // important!
 
 export default async function Home() {
-  const cards = await getCardData();
   return (
     <main className="App">
       <Navbar />

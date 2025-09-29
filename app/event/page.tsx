@@ -1,10 +1,7 @@
 import "@ant-design/v5-patch-for-react-19";
 import Navbar from "@/components/navbars";
 import Footers from "@/components/footer";
-import { cardData } from "@/lib/data";
-import Cards from "@/components/event-card";
 import CardList from "@/components/cardlist";
-import { getCardData } from "../action/cardDataAction";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
@@ -13,7 +10,6 @@ const contentStyle: React.CSSProperties = {
 };
 
 export default async function Event() {
-  const cards = await getCardData();
   return (
     <main className="App">
       <Navbar />
@@ -23,7 +19,7 @@ export default async function Event() {
           <p className="text-5xl font-bold mb-10 uppercase">School Events</p>
         </div>
       </div>
-      <CardList cards={cards} />
+      <CardList />
       <Footers />
     </main>
   );
