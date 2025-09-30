@@ -11,6 +11,9 @@ export default function CardForm({
 }: {
   createCard: (formData: FormData) => void;
 }) {
+  const today = new Date().toISOString().split("T")[0];
+  const now = new Date();
+  const currentTime = now.toTimeString().slice(0, 5);
   return (
     <div className="flex flex-col gap-6">
       <Card>
@@ -37,6 +40,7 @@ export default function CardForm({
               name="date"
               required
               className="border p-2 w-full"
+              defaultValue={today}
             />
             <Input
               type="text"
@@ -52,6 +56,7 @@ export default function CardForm({
                   name="startTime"
                   required
                   className="border p-2 w-full"
+                  defaultValue={currentTime}
                 />
               </div>
               <div className="flex-1">
@@ -61,6 +66,7 @@ export default function CardForm({
                   name="endTime"
                   required
                   className="border p-2 w-full"
+                  defaultValue={currentTime}
                 />
               </div>
             </div>

@@ -13,10 +13,9 @@ export default async function Event() {
   return (
     <main className="App">
       <Navbar />
-      <div className="relative">
-        <img style={contentStyle} src="/img1.jpg" alt="" />
-        <div className="absolute inset-0 flex items-center justify-center text-white z-20 bg-gradient-to-b from-red-900 to-transparent flex-col p-20">
-          <p className="text-5xl font-bold mb-10 uppercase">School Events</p>
+      <div className="relative bg-[url(/img1.jpg)]">
+        <div className="flex items-center justify-center text-white z-20 bg-gradient-to-b from-red-900 to-transparent flex-col p-20">
+          <p className="text-4xl font-bold my-10 uppercase">School Events</p>
         </div>
       </div>
       <CardList />
