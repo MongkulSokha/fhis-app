@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { IconPlus } from "@tabler/icons-react";
 import ProtectedLayout from "../ProtectedLayout";
 
+export const dynamic = "force-dynamic";
+
 export default function UserPage() {
   return (
     <ProtectedLayout>

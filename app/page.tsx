@@ -11,7 +11,6 @@ import WhyChooseUs from "@/components/why-choose";
 import Counter from "@/components/counter";
 import Gallerys from "@/components/gallery";
 import CardList from "@/components/cardlist";
-import ProtectedLayout from "./dashboard/ProtectedLayout";
 
 export const dynamic = "force-dynamic"; // important!
 
