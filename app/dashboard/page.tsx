@@ -1,15 +1,16 @@
-import { AppSidebar } from "@/components/dashboard/app-sidebar";
-import { SiteHeader } from "@/components/dashboard/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { createCard, getCardData } from "../action/cardDataAction";
 import TableData from "@/components/dashboard/table-data";
 import { Button } from "@/components/ui/button";
 import { IconPlus } from "@tabler/icons-react";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export default async function Page() {
-  const cards = await getCardData();
+  const session = await getServerSession(authOptions);
 
+  if (!session) redirect("/signin");
   return (
     <SidebarProvider
       style={

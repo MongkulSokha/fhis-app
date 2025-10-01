@@ -6,6 +6,7 @@ import { ConfigProvider } from "antd";
 import { AppSidebar } from "@/components/dashboard/app-sidebar";
 import { SiteHeader } from "@/components/dashboard/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export default function DashboardLayout({
   children,

@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/table";
 
 import React from "react";
-import DeleteButton from "../delete-card-button";
+import DeleteButton from "../ui/delete-card-button";
 
 const TableData = async () => {
   const cards = await getCardData();
