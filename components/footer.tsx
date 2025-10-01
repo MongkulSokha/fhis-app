@@ -4,6 +4,8 @@ import React from "react";
 import { Button, Input, Layout, Menu, Space, theme } from "antd";
 import Link from "next/link";
 import Image from "next/image";
+import CurriculumSlider from "./curriculum-slider";
+import CurriculumFooter from "./curriculum-slider-footer";
 
 const { Footer } = Layout;
 
@@ -24,7 +26,7 @@ const Footers: React.FC = () => {
           flexGrow: 1,
         }}
       >
-        <div className="flex flex-col md:flex-row gap-20 md:gap-50 px-10 md:px-10 xl:px-60">
+        <div className="flex flex-col md:flex-row gap-10 md:gap-10 lg:gap-50 px-10 md:px-10 xl:px-60">
           <div>
             <div className="flex ">
               <Link href="/">
@@ -36,25 +38,30 @@ const Footers: React.FC = () => {
                 />
               </Link>
             </div>
-            <p className="flex text-start">
+            <p className="flex text-start w-full md:w-50 lg:w-90 text-base md:text- lg:text-base">
               #50, Street 271 (Opposite to Heng Ly Market), Teuk Thla, Sen Sok,
               Phnom Penh, Cambodia
             </p>
           </div>
           <div className="flex flex-col pt-5">
-            <div className="flex flex-col text-start pb-15">
+            <div className="flex flex-col text-start pb-5">
               <p className="text-sm pb-2 font-medium">TRILNGUAL CURRICULUM</p>
-              <img className="w-50" src="/flags.svg" alt="" />
+              <img className="w-40" src="/flags.svg" alt="" />
+            </div>
+            <div className="pb-5">
+              <CurriculumFooter />
             </div>
             <div className="flex flex-col text-start">
-              <p>Contact</p>
               <p>Tel: (+855) 17 388 884</p>
+            </div>
+            <div className="flex flex-col text-start">
+              <p>Email:infor@foresthillschool.edu.kh</p>
             </div>
           </div>
           <div className="flex flex-col pt-5">
-            <div className="flex flex-col text-start pb-10 gap-2">
+            <div className="flex flex-col text-start pb-10 gap-1">
               <p>Subscribe Newsletter</p>
-              <p className="text-xs">
+              <p className="text-sm pb-2">
                 Please subscribe our website to get school information
               </p>
               <Space.Compact style={{ width: "100%" }}>
@@ -68,9 +75,71 @@ const Footers: React.FC = () => {
                 <Button>Subscribe</Button>
               </Space.Compact>
             </div>
-            <div className="flex flex-col text-start">
-              <p>Email</p>
-              <p>infor@foresthillschool.edu.kh</p>
+            <div className="flex-col bg-white p-1 rounded-sm content-center">
+              <div className="flex-1">
+                <p className="text-xs uppercase text-center text-black font-medium pb-2">
+                  Forest Hill International School
+                </p>
+              </div>
+              <div className="flex mx-5 content-center gap-2 flex-row">
+                <Link
+                  target="_blank"
+                  href="https://www.facebook.com/ForestHillInternational"
+                >
+                  <img
+                    className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                    src="/facebook.svg"
+                    alt="facebook-icon"
+                  />
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://www.youtube.com/channel/UC1dse898ZKr3kLSQvQp4MRg"
+                >
+                  <img
+                    className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                    src="/youtube.svg"
+                    alt="youtube-icon"
+                  />
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://www.linkedin.com/company/forest-hill-international-school/about//"
+                >
+                  <img
+                    className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                    src="/linkedin.svg"
+                    alt="linkedin-icon"
+                  />
+                </Link>
+                <Link target="_blank" href="https://t.me/+tTWr_iK8qT8zZjZl">
+                  <img
+                    className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                    src="/telegram.svg"
+                    alt="telegram-icon"
+                  />
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://instagram.com/foresthillinternational?igshid=MzRlODBiNWFlZA=="
+                >
+                  <img
+                    className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                    src="/instagram.svg"
+                    alt="instagram-icon"
+                  />
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://www.tiktok.com/@foresthillinternational?is_from_webapp=1&sender_device=pc"
+                >
+                  <img
+                    className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                    src="/tiktok.svg"
+                    alt="tiktok-icon"
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

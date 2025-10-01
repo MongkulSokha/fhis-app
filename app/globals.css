@@ -35,7 +35,7 @@ body {
 
 .ant-input::placeholder {
   color: #000000ff !important;
-  font-size: medium;
+  font-size: small;
   opacity: 1;
   border-color: white !important;
 }
@@ -44,6 +44,7 @@ body {
   background-color: rgb(255, 190, 49) !important;
   color: white !important;
   border-color: white !important;
+  font-size: small !important;
 }
 
 .ant-card:hover {
