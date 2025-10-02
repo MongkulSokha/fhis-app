@@ -89,20 +89,6 @@ const items: MenuProps["items"] = [
   },
 ];
 
-const customOverlay = (
-  <div
-    style={{
-      padding: 16,
-      background: "#fff",
-      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
-    }}
-  >
-    <h3>Custom Content</h3>
-    <p>This is a custom dropdown overlay.</p>
-    <Button type="primary">Action</Button>
-  </div>
-);
-
 const Navbar: React.FC = () => {
   const [select, setSelect] = React.useState(["3"]);
   const onClick: MenuProps["onClick"] = (e) => {
@@ -116,10 +102,11 @@ const Navbar: React.FC = () => {
           backgroundColor: "#ffffffff",
           display: "flex",
           height: 120,
+          width: "100%",
           alignItems: "center",
         }}
       >
-        <div className="flex flex-row items-center mx-0 md:mx-0 xl:mx-50 w-100%">
+        <div className="flex flex-row items-center mx-0 md:mx-0 xl:mx-50">
           <Link href="/">
             <Image
               style={{ display: "" }}
@@ -130,12 +117,12 @@ const Navbar: React.FC = () => {
             />
           </Link>
           <div className="flex-col">
-            <div className="flex-1">
-              <p className="text-sm uppercase text-center text-black font-medium pb-2">
+            <div className="">
+              <p className="text-xs uppercase text-center text-black font-medium pb-3">
                 Forest Hill International School
               </p>
             </div>
-            <div className="flex mx-10 justify-between gap-2 flex-row flex-1 ">
+            <div className="flex mx-5 justify-between gap-2 flex-row ">
               <Link
                 target="_blank"
                 href="https://www.facebook.com/ForestHillInternational"
@@ -197,13 +184,13 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex flex-rows text-black hidden md:block sm:block">
             <div className="flex flex-col xl:flex-row lg:flex-col md:flex-col sm:flex-col ">
-              <div className="flex text-black ms-3 whitespace-nowrap">
+              <div className="flex text-black ms-4 whitespace-nowrap">
                 <div className="h-5">
                   <PhoneFilled />
                 </div>
                 <p className="px-3 pe-5 ">(+855) 17 388 884</p>
               </div>
-              <div className="flex text-black whitespace-nowrap">
+              <div className="flex text-black whitespace-nowrap ms-4">
                 <div className="h-5">
                   <MailFilled />
                 </div>
