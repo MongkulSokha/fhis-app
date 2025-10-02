@@ -4,7 +4,11 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "@ant-design/v5-patch-for-react-19";
 import theme from "@/theme/themeConfig";
 import { ConfigProvider } from "antd";
-import { ClerkProvider } from "@clerk/nextjs";
+import { Geist } from "next/font/google";
+
+const geist = Geist({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Forest Hill International School",
@@ -19,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={geist.className}>
         <ConfigProvider theme={theme}>
           <AntdRegistry>{children}</AntdRegistry>
         </ConfigProvider>
