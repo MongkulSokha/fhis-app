@@ -13,7 +13,7 @@ const ActivitiesGallery = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-1 mx-20 md:mx-20 xl:mx-60 my-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 gap-2 mx-20 md:mx-20 xl:mx-60 my-20">
         <Image.PreviewGroup
           preview={{
             onChange: (current, prev) =>
@@ -21,12 +21,15 @@ const ActivitiesGallery = () => {
           }}
         >
           {cards.map((card: any, idx: number) => (
-            <div key={idx} className="rounded-lg overflow-hidden ">
+            <div
+              key={idx}
+              className="rounded-lg overflow-hidden w-full h-80 lg:h-120 md:h-80"
+            >
               <Image
                 className="object-cover w-full h-full rounded-lg"
                 src={card.img}
                 alt=""
-                height={440}
+                height="100%"
                 width="100%"
               />
             </div>

@@ -20,7 +20,7 @@ const UserData = async () => {
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Name</TableHead>
-          <TableHead>email</TableHead>
+          <TableHead>Email</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

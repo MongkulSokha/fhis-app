@@ -8,8 +8,6 @@ const contentStyle: React.CSSProperties = {
   backgroundColor: "white",
   boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
   border: "none",
-  width: 350,
-  minWidth: 200,
 };
 
 const TestimonialCard = ({
@@ -29,7 +27,7 @@ const TestimonialCard = ({
         style={contentStyle}
         cover={
           <img
-            className="h-40 w-full object-cover"
+            className="h-40 object-cover"
             draggable={false}
             alt="example"
             src={img}
@@ -37,7 +35,7 @@ const TestimonialCard = ({
         }
       >
         <Meta
-          className=""
+          className="w-45 sm:w-79"
           description={
             <>
               <div className="flex flex-col justify-between text-start">

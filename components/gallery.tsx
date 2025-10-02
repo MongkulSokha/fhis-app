@@ -18,11 +18,14 @@ const Gallerys = () => {
         <div className="flex items-center h-[0.2rem] bg-red-900 mt-3 w-25"></div>
       </div>
 
-      <div className="mx-20 md:mx-20 xl:mx-60 my-20 grid md:grid-cols-2 gap-2">
+      <div className="mx-15 md:mx-20 xl:mx-60 my-20 grid md:grid-cols-2 gap-2">
         {cards.slice(0, 1).map((card: any, idx: number) => (
-          <div key={idx} className="rounded-lg overflow-hidden">
+          <div
+            key={idx}
+            className="rounded-lg overflow-hidden w-full h-80 lg:h-162 md:h-161"
+          >
             <Image
-              height={800}
+              height="100%"
               width="100%"
               className="object-cover w-full h-full rounded-lg"
               src={card.img}
@@ -39,12 +42,15 @@ const Gallerys = () => {
             }}
           >
             {cards.slice(1, 5).map((card: any, idx: number) => (
-              <div key={idx} className="rounded-lg overflow-hidden ">
+              <div
+                key={idx}
+                className="rounded-lg overflow-hidden w-full h-40 lg:h-80 md:h-80"
+              >
                 <Image
                   className="object-cover w-full h-full rounded-lg"
                   src={card.img}
                   alt=""
-                  height={395}
+                  height="100%"
                   width="100%"
                 />
               </div>
