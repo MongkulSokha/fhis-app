@@ -76,18 +76,18 @@ body {
   background-color: #570614ff !important;
 }
 
-:where(.css-dev-only-do-not-override-1r7lu65).ant-menu-light
+:where(.css-dev-only-do-not-override-n5jl24).ant-menu-light
   > .ant-menu
   .ant-menu-submenu-title {
-  color: black;
-  background: white;
+  color: #333 !important;
+  background: white !important;
 }
 
-:where(.css-dev-only-do-not-override-1r7lu65).ant-menu-light
+:where(.css-dev-only-do-not-override-n5jl24).ant-menu-light
   > .ant-menu
   .ant-menu-submenu-title:hover {
-  color: rgb(255, 255, 255);
-  background-color: #570614ff !important;
+  color: #ffffff !important;
+  background: #570614ff !important;
 }
 
 @theme inline {
