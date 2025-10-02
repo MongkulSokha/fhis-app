@@ -40,7 +40,7 @@ const TableData = () => {
       <Table className="">
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">Title</TableHead>
+            <TableHead className="w-[100px] ">Title</TableHead>
             <TableHead>Image</TableHead>
             <TableHead>Date</TableHead>
             <TableHead>Time</TableHead>
@@ -51,13 +51,18 @@ const TableData = () => {
         <TableBody>
           {paginatedCards.map((card, idx) => (
             <TableRow key={idx}>
-              <TableCell className="font-medium">{card.title}</TableCell>
+              <TableCell className="font-medium">
+                <p className="w-25 sm:w-45 line-clamp-[1]">{card.title}</p>
+              </TableCell>
               <TableCell>
                 <img className="h-20" src={card.img} alt="" />
               </TableCell>
               <TableCell>{card.date}</TableCell>
               <TableCell>{card.time}</TableCell>
-              <TableCell>{card.location}</TableCell>
+              <TableCell>
+                {" "}
+                <p className="w-25 line-clamp-[1]">{card.location}</p>
+              </TableCell>
               <TableCell>
                 <DeleteButton cardId={card.id} />
               </TableCell>

@@ -36,7 +36,7 @@ const TestimonialData = async () => {
             </TableCell>
             <TableCell>{testmonial.position}</TableCell>
             <TableCell>
-              <div className="w-20">{testmonial.text}</div>
+              <div className="w-20 line-clamp-1">{testmonial.text}</div>
             </TableCell>
             <TableCell>
               <DeleteTestimonialButton testimonialId={testmonial.id} />

@@ -9,6 +9,15 @@ module.exports = {
   },
 };
 
+const nextConfig = {
+  i18n: {
+    locales: ["en", "km"],
+    defaultLocale: "en",
+  },
+};
+
+module.exports = nextConfig;
+
 // module.exports = {
 //   turbopack: {
 //     webpack(config: {
