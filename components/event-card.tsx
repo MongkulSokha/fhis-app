@@ -56,7 +56,7 @@ const Cards = ({
                     </p>
                   </div>
 
-                  <p className="text-black text-lg sm:text-xl font-semibold">
+                  <p className="text-black text-lg sm:text-xl font-semibold line-clamp-2">
                     {title}
                   </p>
                   <p className="text-red-900 font-semibold text-xs sm:text-base">
