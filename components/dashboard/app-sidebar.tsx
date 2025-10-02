@@ -40,6 +40,11 @@ const data = {
       url: "/dashboard/users",
       icon: IconUserCircle,
     },
+    {
+      title: "Testimonial",
+      url: "/dashboard/testimonial",
+      icon: IconUserCircle,
+    },
   ],
   navSecondary: [
     {
