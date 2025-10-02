@@ -15,10 +15,16 @@ const WhyChooseUs = () => {
       </div>
       <div className="flex flex-col px-20 py-10 justify-between gap-5 pb-20 md:flex-row">
         <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300 transition-transform duration-300 ease-in-out hover:translate-y-1">
-          <img className="w-23 pe-4" src="/book.svg" alt="" />
+          <img
+            className="w-23 px-4 lg:px-8 lg:w-45 md:px-4 md:w-23"
+            src="/book.svg"
+            alt=""
+          />
           <div>
-            <p className="text-black font-semibold">Books & Library</p>
-            <p className="text-black text-sm">
+            <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
+              Books & Library
+            </p>
+            <p className="text-black text-sm lg:text-base md:text-sm">
               If you are going to use a passage of Lorem Ipsum, you need to be
               sure there isn't anything embarrassing hidden in the middle of
               text
@@ -26,10 +32,16 @@ const WhyChooseUs = () => {
           </div>
         </div>
         <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300 transition-transform duration-300 ease-in-out hover:translate-y-1">
-          <img className="w-23 pe-4" src="/learn.svg" alt="" />
+          <img
+            className="w-23 px-4 lg:px-8 lg:w-45 md:px-4 md:w-23"
+            src="/learn.svg"
+            alt=""
+          />
           <div>
-            <p className="text-black font-semibold">Learn Courses Online</p>
-            <p className="text-black text-sm">
+            <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
+              Learn Courses Online
+            </p>
+            <p className="text-black text-sm lg:text-base md:text-sm">
               If you are going to use a passage of Lorem Ipsum, you need to be
               sure there isn't anything embarrassing hidden in the middle of
               text
@@ -37,10 +49,16 @@ const WhyChooseUs = () => {
           </div>
         </div>
         <div className="flex flex-rows items-start shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)] p-4 rounded-lg py-7 hover:bg-blue-100 border border-white hover:border-blue-300 transition-transform duration-300 ease-in-out hover:translate-y-1">
-          <img className="w-23 pe-4" src="/sports.svg" alt="" />
+          <img
+            className="w-23 px-4 lg:px-8 lg:w-45 md:px-4 md:w-23"
+            src="/sports.svg"
+            alt=""
+          />
           <div>
-            <p className="text-black font-semibold">Sports</p>
-            <p className="text-black text-sm">
+            <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
+              Sports
+            </p>
+            <p className="text-black text-sm lg:text-base md:text-sm">
               If you are going to use a passage of Lorem Ipsum, you need to be
               sure there isn't anything embarrassing hidden in the middle of
               text

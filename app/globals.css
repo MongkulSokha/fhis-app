@@ -40,6 +40,21 @@ body {
   border-color: white !important;
 }
 
+.ant-menu-submenu-popup .ant-menu {
+  background-color: #f0f2f5 !important;
+  color: #333 !important;
+}
+
+.ant-menu-submenu-popup .ant-menu-item {
+  background-color: #ffffff !important;
+  color: #333 !important;
+}
+
+.ant-menu-submenu-popup .ant-menu-item:hover {
+  background-color: #570614ff !important;
+  color: #ffffff !important;
+}
+
 .ant-btn {
   background-color: rgb(255, 190, 49) !important;
   color: white !important;
@@ -49,6 +64,30 @@ body {
 
 .ant-card:hover {
   background-color: #e6f7ff !important;
+}
+
+.ant-dropdown-menu {
+  background-color: rgb(255, 255, 255) !important;
+  width: 5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: #570614ff !important;
+}
+
+:where(.css-dev-only-do-not-override-1r7lu65).ant-menu-light
+  > .ant-menu
+  .ant-menu-submenu-title {
+  color: black;
+  background: white;
+}
+
+:where(.css-dev-only-do-not-override-1r7lu65).ant-menu-light
+  > .ant-menu
+  .ant-menu-submenu-title:hover {
+  color: rgb(255, 255, 255);
+  background-color: #570614ff !important;
 }
 
 @theme inline {

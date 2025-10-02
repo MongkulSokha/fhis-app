@@ -2,14 +2,17 @@
 
 import Image from "next/image";
 import React from "react";
-import { Affix, Layout, Menu, theme } from "antd";
+import { Affix, Button, Dropdown, Layout, Menu, Space, theme } from "antd";
 import type { MenuProps } from "antd";
 import { PhoneFilled, MailFilled, DownOutlined } from "@ant-design/icons";
 import Link from "next/link";
+import { Flag } from "lucide-react";
 
 const { Header } = Layout;
 
-type MenuItem = Required<MenuProps>["items"][number];
+type MenuItem = Required<
+  NonNullable<Parameters<typeof Menu>[0]["items"]>
+>[number];
 
 function getItem(
   label: React.ReactNode,
@@ -23,64 +26,82 @@ function getItem(
   } as MenuItem;
 }
 
-const items: MenuItem[] = [
-  getItem(<Link href="/">Home </Link>, "home"),
+const item: MenuItem[] = [
+  getItem(<Link href="/">Home</Link>, "home"),
+
   getItem(
     <span>
-      About us
-      <DownOutlined className="px-1" />
+      About us <DownOutlined style={{ fontSize: 12, marginLeft: 4 }} />
     </span>,
     "sub1",
     [
       getItem(
-        <span className="focus:text-black hover:text-xl p-2 rounded-1xl">
-          <Link href="/aboutus">Vision, Mission and Core Value</Link>
-        </span>,
+        <Link href="/aboutus">Vision, Mission and Core Value</Link>,
         "about"
       ),
-      getItem(
-        <span className="hover:text-xl p-2 rounded-1xl">Why Choose FHIS?</span>,
-        "why"
-      ),
-      getItem(
-        <span className="hover:text-xl p-2 rounded-1xl">School Policies</span>,
-        "policies"
-      ),
-      getItem(
-        <span className="hover:text-2xl p-2 rounded-1xl">
-          School Facilities
-        </span>,
-        "facilities"
-      ),
+      getItem("Why Choose FHIS?", "why"),
+      getItem("School Policies", "policies"),
+      getItem("School Facilities", "facilities"),
     ]
   ),
+
   getItem(
     <span>
-      News & Events
-      <DownOutlined className="px-1" />
+      Accreditation <DownOutlined style={{ fontSize: 12, marginLeft: 4 }} />
     </span>,
     "sub2",
     [
-      getItem(
-        <span className="focus:text-black hover:text-xl p-2 rounded-1xl">
-          <Link href="/event">School Events</Link>
-        </span>,
-        "event"
-      ),
-      getItem(
-        <span className="focus:text-black hover:text-xl p-2 rounded-1xl">
-          <Link href="/gallery">School Activities</Link>
-        </span>,
-        "activites"
-      ),
+      getItem("IEYC", "ieyc"),
+      getItem("IPC", "ipc"),
+      getItem("Cambridge", "cambridge"),
+      getItem("MoEYS", "moeys"),
     ]
   ),
-  getItem("Curriculum", "7"),
-  getItem("Extracurriculum", "8"),
-  getItem("Afterschool Program", "9"),
-  getItem("Career", "10"),
-  getItem("Admission", "11"),
+
+  getItem("Curriculum", "curriculum"),
+  getItem("Extracurriculum", "extra"),
+  getItem("Afterschool Program", "afterschool"),
+  getItem("Career", "career"),
+  getItem("Admission", "admission"),
+  getItem(
+    <span>
+      News & Events <DownOutlined style={{ fontSize: 12, marginLeft: 4 }} />
+    </span>,
+    "sub3",
+    [
+      getItem(<Link href="/event">School Events</Link>, "event"),
+      getItem(<Link href="/gallery">School Activities</Link>, "activites"),
+    ]
+  ),
+  getItem("Inquiries", "inquiries"),
+  getItem("Contact", "contact"),
+  getItem("Quick Link", "quicklink"),
 ];
+
+const items: MenuProps["items"] = [
+  {
+    key: "1",
+    icon: <Image src="/cambodia-flag.svg" alt="" width={50} height={50} />,
+  },
+  {
+    key: "2",
+    icon: <Image src="/china-flag.svg" alt="" width={50} height={50} />,
+  },
+];
+
+const customOverlay = (
+  <div
+    style={{
+      padding: 16,
+      background: "#fff",
+      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
+    }}
+  >
+    <h3>Custom Content</h3>
+    <p>This is a custom dropdown overlay.</p>
+    <Button type="primary">Action</Button>
+  </div>
+);
 
 const Navbar: React.FC = () => {
   const [select, setSelect] = React.useState(["3"]);
@@ -98,7 +119,7 @@ const Navbar: React.FC = () => {
           alignItems: "center",
         }}
       >
-        <div className="flex flex-row items-center mx-0 md:mx-0 xl:mx-50">
+        <div className="flex flex-row items-center mx-0 md:mx-0 xl:mx-50 w-100%">
           <Link href="/">
             <Image
               style={{ display: "" }}
@@ -174,7 +195,7 @@ const Navbar: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="flex text-black hidden md:block sm:block">
+          <div className="flex flex-rows text-black hidden md:block sm:block">
             <div className="flex flex-col lg:flex-row md:flex-col sm:flex-col ">
               <div className="flex text-black ms-3">
                 <div className="h-5">
@@ -189,6 +210,16 @@ const Navbar: React.FC = () => {
                 <p className="ps-3">infor@foresthillschool.edu.kh</p>
               </div>
             </div>
+          </div>
+          <div className="flex ps-10 lg:ps-20 hidden md:block sm:block">
+            <Dropdown menu={{ items }}>
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  <Image src="/uk-flag.svg" alt="" width={30} height={30} />
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
           </div>
         </div>
       </Header>
@@ -214,8 +245,11 @@ const Navbar: React.FC = () => {
               onClick={onClick}
               mode="horizontal"
               selectedKeys={select}
-              items={items}
-              style={{ flex: 1, minWidth: 0 }}
+              expandIcon={({ isOpen }) => (
+                <DownOutlined style={{ fontSize: 0 }} />
+              )}
+              items={item}
+              style={{ flex: 1, minWidth: 0, fontSize: 14 }}
             />
           </Header>
         </Header>
