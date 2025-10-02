@@ -34,7 +34,7 @@ export default async function Home() {
       <Gallerys />
       {/* Testimonial */}
       <div>
-        <div className="px-20 md:px-20 xl:px-60 bg-gray-100 h-full flex pt-20 px-20 flex-col text-center items-center">
+        <div className="px-20 md:px-20 xl:px-60 bg-gray-100 h-full flex pt-20  flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Testimonial</p>
           <div className="flex items-center h-[0.2rem] bg-red-900 mt-3 w-35"></div>
           <TestimonialList />

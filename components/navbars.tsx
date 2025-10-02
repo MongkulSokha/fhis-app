@@ -196,14 +196,14 @@ const Navbar: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-rows text-black hidden md:block sm:block">
-            <div className="flex flex-col lg:flex-row md:flex-col sm:flex-col ">
-              <div className="flex text-black ms-3">
+            <div className="flex flex-col xl:flex-row lg:flex-col md:flex-col sm:flex-col ">
+              <div className="flex text-black ms-3 whitespace-nowrap">
                 <div className="h-5">
                   <PhoneFilled />
                 </div>
-                <p className="px-3 pe-5">(+855) 17 388 884</p>
+                <p className="px-3 pe-5 ">(+855) 17 388 884</p>
               </div>
-              <div className="flex text-black ">
+              <div className="flex text-black whitespace-nowrap">
                 <div className="h-5">
                   <MailFilled />
                 </div>

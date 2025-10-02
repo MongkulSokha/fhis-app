@@ -4,7 +4,6 @@ import React from "react";
 import { Button, Input, Layout, Menu, Space, theme } from "antd";
 import Link from "next/link";
 import Image from "next/image";
-import CurriculumSlider from "./curriculum-slider";
 import CurriculumFooter from "./curriculum-slider-footer";
 
 const { Footer } = Layout;
@@ -26,9 +25,9 @@ const Footers: React.FC = () => {
           flexGrow: 1,
         }}
       >
-        <div className="flex flex-col md:flex-row gap-10 md:gap-10 lg:gap-50 px-10 md:px-10 xl:px-60">
+        <div className="flex flex-col  justify-center md:flex-row gap-5 md:gap-10 lg-gap-10 xl:gap-20 2xl:gap-60 px-5 md:px-">
           <div>
-            <div className="flex ">
+            <div className="flex">
               <Link href="/">
                 <Image
                   src="/fhis-logo-white.svg"
@@ -38,7 +37,7 @@ const Footers: React.FC = () => {
                 />
               </Link>
             </div>
-            <p className="flex text-start w-full md:w-50 lg:w-90 text-base md:text- lg:text-base">
+            <p className="flex text-start w-70 md:w-40 lg:w-50 sm:w-80 text-base md:text- lg:text-base">
               #50, Street 271 (Opposite to Heng Ly Market), Teuk Thla, Sen Sok,
               Phnom Penh, Cambodia
             </p>
@@ -52,10 +51,10 @@ const Footers: React.FC = () => {
               <CurriculumFooter />
             </div>
             <div className="flex flex-col text-start">
-              <p>Tel: (+855) 17 388 884</p>
-            </div>
-            <div className="flex flex-col text-start">
-              <p>Email:infor@foresthillschool.edu.kh</p>
+              <p className="whitespace-nowrap">Tel: (+855) 17 388 884</p>
+              <p className="whitespace-nowrap">
+                Email: infor@foresthillschool.edu.kh
+              </p>
             </div>
           </div>
           <div className="flex flex-col pt-5">
