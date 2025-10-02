@@ -11,7 +11,7 @@ import Gallerys from "@/components/gallery";
 import CardList from "@/components/cardlist";
 import TestimonialList from "@/components/testimoniallist";
 
-export const dynamic = "force-dynamic"; // important!
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   return (
@@ -22,7 +22,6 @@ export default async function Home() {
       <CardSlider />
       <WhyChooseUs />
       <Counter />
-      {/* Upcoming Events */}
       <div>
         <div className="flex pt-20 px-20 flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Upcoming Events</p>
@@ -32,7 +31,6 @@ export default async function Home() {
       </div>
       <CurriculumSlider />
       <Gallerys />
-      {/* Testimonial */}
       <div>
         <div className="px-20 md:px-20 xl:px-60 bg-gray-100 h-full flex pt-20  flex-col text-center items-center">
           <p className="text-2xl font-bold uppercase">Testimonial</p>
