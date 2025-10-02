@@ -2,6 +2,7 @@ import type { ThemeConfig } from "antd";
 
 const theme: ThemeConfig = {
   token: {
+    fontFamily: "Geist, sans-serif",
     fontSize: 17,
     colorPrimary: "#ffffffff",
     colorTextBase: "#ffffffff",
