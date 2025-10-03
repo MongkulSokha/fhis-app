@@ -13,7 +13,7 @@ export default function Popup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 1000);
+    const timer = setTimeout(() => setOpen(true), 300);
     return () => clearTimeout(timer);
   }, []);
 
