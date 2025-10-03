@@ -13,7 +13,7 @@ export default function Popup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 2000);
+    const timer = setTimeout(() => setOpen(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -22,8 +22,8 @@ export default function Popup() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTitle />
-      <DialogOverlay className="fixed inset-0 bg-black/50 z-40" />
-      <DialogContent className="fixed top-1/2 !max-w-200 p-0 m-0 rounded-[0]">
+      <DialogOverlay className="fixed inset-0 bg-black/30 z-40" />
+      <DialogContent className="fixed top-1/2 !max-w-200 p-0 m-0 rounded-[0] shadow-[0_1px_6px_-1px_rgba(0,0,0,0.4)]">
         {cards.slice(0, 1).map((card: any, idx: number) => (
           <div key={idx}>
             <Image
