@@ -47,7 +47,7 @@ const item: MenuItem[] = [
 
   getItem(
     <span>
-      Accreditation <DownOutlined style={{ fontSize: 12, marginLeft: 4 }} />
+      Accreditation <DownOutlined style={{ fontSize: 12 }} />
     </span>,
     "sub2",
     [
@@ -58,14 +58,30 @@ const item: MenuItem[] = [
     ]
   ),
 
-  getItem("Curriculum", "curriculum"),
+  getItem(
+    <span>
+      Curriculum <DownOutlined style={{ fontSize: 12 }} />{" "}
+    </span>,
+    "curriculum",
+    [
+      getItem(
+        <span>
+          National Program <DownOutlined style={{ fontSize: 12 }} />
+        </span>,
+        "national",
+        [getItem("Khmer", "khmer")]
+      ),
+      getItem("IEYP", "ieyp"),
+      getItem("IPP & ISP", "ippisp"),
+    ]
+  ),
   getItem("Extracurriculum", "extra"),
   getItem("Afterschool Program", "afterschool"),
   getItem("Career", "career"),
   getItem("Admission", "admission"),
   getItem(
     <span>
-      News & Events <DownOutlined style={{ fontSize: 12, marginLeft: 4 }} />
+      News & Events <DownOutlined style={{ fontSize: 12 }} />
     </span>,
     "sub3",
     [
@@ -184,7 +200,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex flex-rows text-black hidden md:block sm:block">
             <div className="flex flex-col xl:flex-row lg:flex-col md:flex-col sm:flex-col ">
-              <div className="flex text-black ms-4 whitespace-nowrap">
+              <div className="flex text-black ms-4 whitespace-nowrap h-12">
                 <div className="h-5">
                   <PhoneFilled />
                 </div>
@@ -219,7 +235,7 @@ const Navbar: React.FC = () => {
           }}
         >
           <Header
-            className="mx-0 md:mx-0 xl:mx-50"
+            className="mx-0 md:mx-0 xl:mx-35"
             style={{
               backgroundColor: "#570614ff",
               display: "flex",
@@ -236,7 +252,12 @@ const Navbar: React.FC = () => {
                 <DownOutlined style={{ fontSize: 0 }} />
               )}
               items={item}
-              style={{ flex: 1, minWidth: 0, fontSize: 14 }}
+              style={{
+                flex: 1,
+                minWidth: 0,
+                fontSize: 15,
+                gap: 0,
+              }}
             />
           </Header>
         </Header>
