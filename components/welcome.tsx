@@ -6,10 +6,8 @@ const welcome = () => {
   return (
     <div>
       <div className="px-20 md:px-20 xl:px-50 flex p-20 flex-col text-center items-center ">
-        <p className="text-4xl sm:text-5xl font-semibold pb-5">Welcome to</p>
-        <p className="text-4xl sm:text-5xl font-bold">
-          FORESTHILL INTERNATIONAL SCHOOL
-        </p>
+        <p className="text-4xl font-semibold pb-5">Welcome to</p>
+        <p className="text-4xl font-bold">FORESTHILL INTERNATIONAL SCHOOL</p>
         <div className="flex items-center h-1 bg-red-900 mt-10 w-65"></div>
         <p className="text-xl sm:text-2xl pt-9 ">
           Activities of students taking the September Monthly Test for National

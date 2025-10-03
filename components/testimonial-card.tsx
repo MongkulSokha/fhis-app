@@ -35,7 +35,7 @@ const TestimonialCard = ({
         }
       >
         <Meta
-          className="w-45 sm:w-79"
+          className="w-62 sm:w-79"
           description={
             <>
               <div className="flex flex-col justify-between text-start">

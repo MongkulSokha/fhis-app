@@ -1,12 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
-import { Affix, Button, Dropdown, Layout, Menu, Space, theme } from "antd";
+import React, { useState } from "react";
+import {
+  Affix,
+  Button,
+  Drawer,
+  Dropdown,
+  Layout,
+  Menu,
+  Space,
+  theme,
+} from "antd";
 import type { MenuProps } from "antd";
-import { PhoneFilled, MailFilled, DownOutlined } from "@ant-design/icons";
+import {
+  PhoneFilled,
+  MailFilled,
+  DownOutlined,
+  MenuOutlined,
+} from "@ant-design/icons";
 import Link from "next/link";
-import { Flag } from "lucide-react";
 
 const { Header } = Layout;
 
@@ -111,121 +124,122 @@ const Navbar: React.FC = () => {
     console.log("click ", e);
   };
 
+  const [drawerVisible, setDrawerVisible] = useState(false);
+
+  const showDrawer = () => {
+    setDrawerVisible(true);
+  };
+
+  const onCloseDrawer = () => {
+    setDrawerVisible(false);
+  };
+
   return (
     <Layout>
-      <Header
-        style={{
-          backgroundColor: "#ffffffff",
-          display: "flex",
-          height: 120,
-          width: "100%",
-          alignItems: "center",
-        }}
-      >
-        <div className="flex flex-row items-center mx-0 md:mx-0 xl:mx-50">
-          <Link href="/">
-            <Image
-              style={{ display: "" }}
-              src="/fhis-logo.svg"
-              alt={""}
-              width={150}
-              height={160}
-            />
-          </Link>
-          <div className="flex-col">
-            <div className="">
+      <div className="bg-white h-30 flex px-6 md:px-15 xl:px-50">
+        <div className="flex items-center justify-between w-full">
+          <div className="flex items-center">
+            <Link href="/">
+              <Image
+                src="/fhis-logo.svg"
+                alt="FHIS Logo"
+                width={150}
+                height={160}
+              />
+            </Link>
+            <div className="flex-col">
               <p className="text-xs uppercase text-center text-black font-medium pb-3">
                 Forest Hill International School
               </p>
-            </div>
-            <div className="flex mx-5 justify-between gap-2 flex-row ">
-              <Link
-                target="_blank"
-                href="https://www.facebook.com/ForestHillInternational"
-              >
-                <img
-                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
-                  src="/facebook.svg"
-                  alt="facebook-icon"
-                />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://www.youtube.com/channel/UC1dse898ZKr3kLSQvQp4MRg"
-              >
-                <img
-                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
-                  src="/youtube.svg"
-                  alt="youtube-icon"
-                />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/company/forest-hill-international-school/about//"
-              >
-                <img
-                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
-                  src="/linkedin.svg"
-                  alt="linkedin-icon"
-                />
-              </Link>
-              <Link target="_blank" href="https://t.me/+tTWr_iK8qT8zZjZl">
-                <img
-                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
-                  src="/telegram.svg"
-                  alt="telegram-icon"
-                />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://instagram.com/foresthillinternational?igshid=MzRlODBiNWFlZA=="
-              >
-                <img
-                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
-                  src="/instagram.svg"
-                  alt="instagram-icon"
-                />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://www.tiktok.com/@foresthillinternational?is_from_webapp=1&sender_device=pc"
-              >
-                <img
-                  className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
-                  src="/tiktok.svg"
-                  alt="tiktok-icon"
-                />
-              </Link>
+              <div className="flex mx-5 gap-2">
+                <div className="flex mx-5 justify-between gap-2 flex-row ">
+                  <Link
+                    target="_blank"
+                    href="https://www.facebook.com/ForestHillInternational"
+                  >
+                    <img
+                      className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                      src="/facebook.svg"
+                      alt="facebook-icon"
+                    />
+                  </Link>
+                  <Link
+                    target="_blank"
+                    href="https://www.youtube.com/channel/UC1dse898ZKr3kLSQvQp4MRg"
+                  >
+                    <img
+                      className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                      src="/youtube.svg"
+                      alt="youtube-icon"
+                    />
+                  </Link>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/company/forest-hill-international-school/about//"
+                  >
+                    <img
+                      className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                      src="/linkedin.svg"
+                      alt="linkedin-icon"
+                    />
+                  </Link>
+                  <Link target="_blank" href="https://t.me/+tTWr_iK8qT8zZjZl">
+                    <img
+                      className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                      src="/telegram.svg"
+                      alt="telegram-icon"
+                    />
+                  </Link>
+                  <Link
+                    target="_blank"
+                    href="https://instagram.com/foresthillinternational?igshid=MzRlODBiNWFlZA=="
+                  >
+                    <img
+                      className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                      src="/instagram.svg"
+                      alt="instagram-icon"
+                    />
+                  </Link>
+                  <Link
+                    target="_blank"
+                    href="https://www.tiktok.com/@foresthillinternational?is_from_webapp=1&sender_device=pc"
+                  >
+                    <img
+                      className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                      src="/tiktok.svg"
+                      alt="tiktok-icon"
+                    />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex flex-rows text-black hidden md:block sm:block">
-            <div className="flex flex-col xl:flex-row lg:flex-col md:flex-col sm:flex-col ">
-              <div className="flex text-black ms-4 whitespace-nowrap h-12">
-                <div className="h-5">
-                  <PhoneFilled />
-                </div>
-                <p className="px-3 pe-5 ">(+855) 17 388 884</p>
+
+          <div className="flex items-center gap-6">
+            <div className="hidden md:flex flex-col xl:flex-row lg:flex-col gap-6 text-black">
+              <div className="flex items-center whitespace-nowrap">
+                <PhoneFilled />
+                <p className="px-3">(+855) 17 388 884</p>
               </div>
-              <div className="flex text-black whitespace-nowrap ms-4">
-                <div className="h-5">
-                  <MailFilled />
-                </div>
+              <div className="flex items-center whitespace-nowrap">
+                <MailFilled />
                 <p className="ps-3">infor@foresthillschool.edu.kh</p>
               </div>
             </div>
-          </div>
-          <div className="flex ps-10 lg:ps-20 hidden md:block sm:block">
-            <Dropdown menu={{ items }}>
-              <a onClick={(e) => e.preventDefault()}>
-                <Space>
-                  <Image src="/uk-flag.svg" alt="" width={30} height={30} />
-                  <DownOutlined />
-                </Space>
-              </a>
-            </Dropdown>
+
+            <div className="hidden md:block me-5">
+              <Dropdown menu={{ items }}>
+                <a onClick={(e) => e.preventDefault()}>
+                  <Space>
+                    <Image src="/uk-flag.svg" alt="" width={30} height={30} />
+                    <DownOutlined />
+                  </Space>
+                </a>
+              </Dropdown>
+            </div>
           </div>
         </div>
-      </Header>
+      </div>
 
       <Affix offsetTop={0}>
         <Header
@@ -234,32 +248,53 @@ const Navbar: React.FC = () => {
             padding: 0,
           }}
         >
-          <Header
-            className="mx-0 md:mx-0 xl:mx-35"
-            style={{
-              backgroundColor: "#570614ff",
-              display: "flex",
-              alignItems: "center",
-            }}
+          <div className="hidden sm:block">
+            <Header
+              className="mx-0 md:mx-0 xl:mx-35"
+              style={{
+                backgroundColor: "#570614ff",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Menu
+                className="uppercase font-medium"
+                theme="light"
+                onClick={onClick}
+                mode="horizontal"
+                selectedKeys={select}
+                expandIcon={({ isOpen }) => (
+                  <DownOutlined style={{ fontSize: 0 }} />
+                )}
+                items={item}
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  fontSize: 15,
+                  gap: 0,
+                }}
+              />
+            </Header>
+          </div>
+
+          <div className="flex justify-end pe-5 block md:hidden text-2xl pt-4">
+            <button onClick={showDrawer}> {<MenuOutlined />} </button>
+          </div>
+
+          <Drawer
+            className="bg-white selected:text-red-900"
+            onClose={onCloseDrawer}
+            open={drawerVisible}
+            placement="right"
           >
             <Menu
-              className="uppercase font-medium"
-              theme="light"
-              onClick={onClick}
-              mode="horizontal"
-              selectedKeys={select}
               expandIcon={({ isOpen }) => (
                 <DownOutlined style={{ fontSize: 0 }} />
               )}
+              mode="inline"
               items={item}
-              style={{
-                flex: 1,
-                minWidth: 0,
-                fontSize: 15,
-                gap: 0,
-              }}
             />
-          </Header>
+          </Drawer>
         </Header>
       </Affix>
     </Layout>

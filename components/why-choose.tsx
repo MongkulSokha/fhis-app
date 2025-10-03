@@ -24,10 +24,9 @@ const WhyChooseUs = () => {
             <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
               Books & Library
             </p>
-            <p className="text-black text-sm lg:text-base md:text-sm">
+            <p className="text-black text-sm lg:text-base md:text-sm text-justify">
               If you are going to use a passage of Lorem Ipsum, you need to be
-              sure there isn't anything embarrassing hidden in the middle of
-              text
+              sure there isn't anything bad hidden in the middle of text
             </p>
           </div>
         </div>
@@ -41,10 +40,9 @@ const WhyChooseUs = () => {
             <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
               Learn Courses Online
             </p>
-            <p className="text-black text-sm lg:text-base md:text-sm">
+            <p className="text-black text-sm lg:text-base md:text-sm text-justify">
               If you are going to use a passage of Lorem Ipsum, you need to be
-              sure there isn't anything embarrassing hidden in the middle of
-              text
+              sure there isn't anything bad hidden in the middle of text
             </p>
           </div>
         </div>
@@ -58,10 +56,9 @@ const WhyChooseUs = () => {
             <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
               Sports
             </p>
-            <p className="text-black text-sm lg:text-base md:text-sm">
+            <p className="text-black text-sm lg:text-base md:text-sm text-justify">
               If you are going to use a passage of Lorem Ipsum, you need to be
-              sure there isn't anything embarrassing hidden in the middle of
-              text
+              sure there isn't anything bad hidden in the middle of text
             </p>
           </div>
         </div>
