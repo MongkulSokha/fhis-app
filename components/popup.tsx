@@ -17,7 +17,7 @@ export default function Popup() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!cards) return console.log("Loading....");
+  if (!cards) return null;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
