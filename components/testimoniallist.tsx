@@ -8,7 +8,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 export default function TestimonialList() {
   const { data: testimonials, mutate } = useSWR("/api/testimonials", fetcher);
 
-  if (!testimonials) return <p>Loading...</p>;
+  if (!testimonials) return null;
 
   return (
     <div className="w-full h-min mx-5 md:mx-20 xl:mx-60 my-20 flex overflow-x-auto gap-7">

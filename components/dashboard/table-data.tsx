@@ -52,18 +52,18 @@ const TableData = () => {
           {paginatedCards.map((card, idx) => (
             <TableRow key={idx}>
               <TableCell className="font-medium">
-                <p className="w-25 sm:w-45 line-clamp-[1]">{card.title}</p>
+                <p className="w-30 sm:w-100 line-clamp-[1]">{card.title}</p>
               </TableCell>
-              <TableCell>
+              <TableCell className="w-40">
                 <img className="h-20" src={card.img} alt="" />
               </TableCell>
-              <TableCell>{card.date}</TableCell>
-              <TableCell>{card.time}</TableCell>
+              <TableCell className="w-20">{card.date}</TableCell>
+              <TableCell className="w-20">{card.time}</TableCell>
               <TableCell>
                 {" "}
-                <p className="w-25 line-clamp-[1]">{card.location}</p>
+                <p className="w-40 line-clamp-[1]">{card.location}</p>
               </TableCell>
-              <TableCell>
+              <TableCell className="w-20">
                 <DeleteButton cardId={card.id} />
               </TableCell>
             </TableRow>

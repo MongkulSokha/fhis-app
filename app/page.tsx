@@ -42,7 +42,7 @@ export default async function Home() {
             <p className="text-2xl font-bold uppercase">Upcoming Events</p>
             <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
           </div>
-          <CardList />
+          <CardList slices={6} />
         </div>
       </Reveal>
 

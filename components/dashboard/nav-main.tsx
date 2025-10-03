@@ -1,6 +1,6 @@
 "use client";
 
-import { type Icon } from "@tabler/icons-react";
+import { IconBoxPadding, type Icon } from "@tabler/icons-react";
 
 import {
   SidebarGroup,
@@ -31,15 +31,16 @@ export function NavMain({
             <SidebarMenuItem key={item.title}>
               <Link href={item.url} className="flex items-center gap-2r">
                 <SidebarMenuButton
+                  size={"lg"}
                   tooltip={item.title}
                   className={
                     isActive
-                      ? "bg-primary text-primary-foreground hover:bg-primary/100 hover:text-white cursor-pointer"
+                      ? "bg-[#570614ff]/20 text-[#570614ff] font-bold cursor-pointer"
                       : "hover:bg-muted hover:text-foreground cursor-pointer"
                   }
                 >
-                  {item.icon && <item.icon />}
-                  <span>{item.title}</span>
+                  <div>{item.icon && <item.icon />}</div>
+                  <span className="text-base">{item.title}</span>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>

@@ -18,7 +18,7 @@ export default async function Event() {
           <p className="text-4xl font-bold my-10 uppercase">School Events</p>
         </div>
       </div>
-      <CardList />
+      <CardList slices={100} />
       <Footers />
     </main>
   );

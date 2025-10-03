@@ -2,16 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import {
-  Affix,
-  Button,
-  Drawer,
-  Dropdown,
-  Layout,
-  Menu,
-  Space,
-  theme,
-} from "antd";
+import { Affix, Drawer, Dropdown, Layout, Menu, Space } from "antd";
 import type { MenuProps } from "antd";
 import {
   PhoneFilled,
@@ -136,7 +127,7 @@ const Navbar: React.FC = () => {
 
   return (
     <Layout>
-      <div className="bg-white h-30 flex px-6 md:px-15 xl:px-50">
+      <div className="bg-white h-25 sm:h-30 flex px-6 md:px-15 xl:px-50">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center">
             <Link href="/">
@@ -248,33 +239,35 @@ const Navbar: React.FC = () => {
             padding: 0,
           }}
         >
-          <div className="hidden sm:block">
-            <Header
-              className="mx-0 md:mx-0 xl:mx-35"
-              style={{
-                backgroundColor: "#570614ff",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Menu
-                className="uppercase font-medium"
-                theme="light"
-                onClick={onClick}
-                mode="horizontal"
-                selectedKeys={select}
-                expandIcon={({ isOpen }) => (
-                  <DownOutlined style={{ fontSize: 0 }} />
-                )}
-                items={item}
+          <div className=" hidden sm:block">
+            <div className="!flex !justify-center">
+              <Header
+                className="mx-0 md:mx-0 xl:mx-35"
                 style={{
-                  flex: 1,
-                  minWidth: 0,
-                  fontSize: 15,
-                  gap: 0,
+                  backgroundColor: "#570614ff",
+                  display: "flex",
+                  alignItems: "center",
                 }}
-              />
-            </Header>
+              >
+                <Menu
+                  className="uppercase font-medium"
+                  theme="light"
+                  onClick={onClick}
+                  mode="horizontal"
+                  selectedKeys={select}
+                  expandIcon={({ isOpen }) => (
+                    <DownOutlined style={{ fontSize: 0 }} />
+                  )}
+                  items={item}
+                  style={{
+                    flex: 1,
+                    minWidth: 0,
+                    fontSize: 15,
+                    gap: 0,
+                  }}
+                />
+              </Header>
+            </div>
           </div>
 
           <div className="flex justify-end pe-5 block md:hidden text-2xl pt-4">
