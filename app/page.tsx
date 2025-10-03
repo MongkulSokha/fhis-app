@@ -10,12 +10,14 @@ import Counter from "@/components/counter";
 import Gallerys from "@/components/gallery";
 import CardList from "@/components/cardlist";
 import TestimonialList from "@/components/testimoniallist";
+import Popup from "@/components/popup";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
   return (
     <main className="App">
+      <Popup />
       <Navbar />
       <Corousel />
       <Welcome />
