@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
                 Forest Hill International School
               </p>
               <div className="flex mx-5 gap-2">
-                <div className="flex mx-5 justify-between gap-2 flex-row ">
+                <div className="flex mx-1 justify-between gap-1 flex-row ">
                   <Link
                     target="_blank"
                     href="https://www.facebook.com/ForestHillInternational"
@@ -240,34 +240,32 @@ const Navbar: React.FC = () => {
           }}
         >
           <div className=" hidden sm:block">
-            <div className="!flex !justify-center">
-              <Header
-                className="mx-0 md:mx-0 xl:mx-35"
+            <Header
+              className="mx-0 md:mx-0 xl:mx-35"
+              style={{
+                backgroundColor: "#570614ff",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Menu
+                className="uppercase font-medium"
+                theme="light"
+                onClick={onClick}
+                mode="horizontal"
+                selectedKeys={select}
+                expandIcon={({ isOpen }) => (
+                  <DownOutlined style={{ fontSize: 0 }} />
+                )}
+                items={item}
                 style={{
-                  backgroundColor: "#570614ff",
-                  display: "flex",
-                  alignItems: "center",
+                  flex: 1,
+                  minWidth: 0,
+                  fontSize: 15,
+                  gap: 0,
                 }}
-              >
-                <Menu
-                  className="uppercase font-medium"
-                  theme="light"
-                  onClick={onClick}
-                  mode="horizontal"
-                  selectedKeys={select}
-                  expandIcon={({ isOpen }) => (
-                    <DownOutlined style={{ fontSize: 0 }} />
-                  )}
-                  items={item}
-                  style={{
-                    flex: 1,
-                    minWidth: 0,
-                    fontSize: 15,
-                    gap: 0,
-                  }}
-                />
-              </Header>
-            </div>
+              />
+            </Header>
           </div>
 
           <div className="flex justify-end pe-5 block md:hidden text-2xl pt-4">
