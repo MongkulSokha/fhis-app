@@ -25,7 +25,7 @@ const Footers: React.FC = () => {
           flexGrow: 1,
         }}
       >
-        <div className="flex flex-col  justify-center md:flex-row gap-5 md:gap-10 lg-gap-10 xl:gap-20 2xl:gap-60 px-5 md:px-">
+        <div className="flex flex-col justify-center md:flex-row gap-5 md:gap-10 lg-gap-10 xl:gap-20 2xl:gap-80 px-5">
           <div>
             <div className="flex">
               <Link href="/">
@@ -142,7 +142,7 @@ const Footers: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="px-10 md:px-10 xl:px-60">
+        <div className="px-5 md:px-10 lg:px-45">
           <div className="flex items-center h-[0.005rem] bg-gray-400 mt-10 w-full "></div>
           <p className="mt-10 mb-5">
             Copyright © {new Date().getFullYear()} Forest Hill International
