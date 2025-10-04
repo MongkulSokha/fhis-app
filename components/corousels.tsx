@@ -31,7 +31,7 @@ const Corousel: React.FC = () => {
       <Carousel autoplay arrows infinite={true}>
         <div className="relative ">
           <img style={contentStyle} src="/img1.jpg" alt="" />
-          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-red-900 to-transparent flex-col p-20">
+          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-[#691b32] to-transparent flex-col p-20">
             <p className="text-5xl md:text-6xl font-bold mb-10 mx-0 md:mx-0 xl:mx-50">
               Forest Hill International School
             </p>
@@ -43,7 +43,7 @@ const Corousel: React.FC = () => {
         </div>
         <div className="relative">
           <img style={contentStyle} src="/img2.jpg" alt="" />
-          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-red-900 to-transparent flex-col p-20">
+          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-[#691b32] to-transparent flex-col p-20">
             <p className="text-5xl md:text-6xl font-bold mb-10 mx-0 md:mx-0 xl:mx-50">
               International Early Year Curriculum
             </p>
@@ -55,7 +55,7 @@ const Corousel: React.FC = () => {
         </div>
         <div className="relative">
           <img style={contentStyle} src="/Halloween.png" alt="" />
-          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-red-900 to-transparent flex-col p-20">
+          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-[#691b32] to-transparent flex-col p-20">
             <p className="text-5xl md:text-6xl font-bold mb-10 mx-0 md:mx-0 xl:mx-50">
               Halloween Event
             </p>

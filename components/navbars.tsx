@@ -128,13 +128,13 @@ const Navbar: React.FC = () => {
   return (
     <Layout>
       <div className="bg-white h-25 sm:h-30 flex px-6 md:px-15 xl:px-50">
-        <div className="flex items-center justify-between w-full">
-          <div className="flex items-center">
+        <div className="flex items-center justify-between  w-full">
+          <div className="flex gap-0 lg:gap-20 items-center">
             <Link href="/">
               <Image
                 src="/fhis-logo.svg"
                 alt="FHIS Logo"
-                width={150}
+                width={140}
                 height={160}
               />
             </Link>
@@ -235,7 +235,8 @@ const Navbar: React.FC = () => {
       <Affix offsetTop={0}>
         <Header
           style={{
-            backgroundColor: "#570614ff",
+            boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.1)",
+            backgroundColor: "#691b32",
             padding: 0,
           }}
         >
@@ -243,7 +244,7 @@ const Navbar: React.FC = () => {
             <Header
               className="mx-0 md:mx-0 xl:mx-35"
               style={{
-                backgroundColor: "#570614ff",
+                backgroundColor: "#691b32",
                 display: "flex",
                 alignItems: "center",
               }}
@@ -273,16 +274,18 @@ const Navbar: React.FC = () => {
           </div>
 
           <Drawer
-            className="bg-white selected:text-red-900"
+            width={320}
             onClose={onCloseDrawer}
             open={drawerVisible}
             placement="right"
           >
             <Menu
+              onClick={onClick}
               expandIcon={({ isOpen }) => (
                 <DownOutlined style={{ fontSize: 0 }} />
               )}
               mode="inline"
+              selectedKeys={select}
               items={item}
             />
           </Drawer>

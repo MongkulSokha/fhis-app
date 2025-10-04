@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
     <div className="px-0 md:px-0 xl:px-50">
       <div className=" flex pt-20 px-20 flex-col text-center items-center">
         <p className="text-2xl font-bold uppercase">Why Choose Us</p>
-        <div className="flex items-center h-[0.2rem] bg-red-900 mt-5 w-45"></div>
+        <div className="flex items-center h-[0.2rem] bg-[#691b32] mt-5 w-45"></div>
         <p className="text-1xl pt-3 ">
           We offer an affordable, quality education with Trilingual Curriculums:
           English, Khmer and Chinese
@@ -20,7 +20,7 @@ const WhyChooseUs = () => {
             src="/book.svg"
             alt=""
           />
-          <div>
+          <div className="pe-5">
             <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
               Books & Library
             </p>
@@ -36,7 +36,7 @@ const WhyChooseUs = () => {
             src="/learn.svg"
             alt=""
           />
-          <div>
+          <div className="pe-5">
             <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
               Learn Courses Online
             </p>
@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
             src="/sports.svg"
             alt=""
           />
-          <div>
+          <div className="pe-5">
             <p className="text-black font-semibold text-lg lg:text-xl md:text-lg pb-1">
               Sports
             </p>

@@ -42,7 +42,7 @@ const TestimonialCard = ({
                 <p className="text-black text-xl font-semibold capitalize">
                   {name}
                 </p>
-                <p className="text-red-900 font-semibold">{position}</p>
+                <p className="text-[#691b32] font-semibold">{position}</p>
                 <p className="text-black text-sm">{text}</p>
               </div>
             </>

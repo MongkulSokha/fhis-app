@@ -59,7 +59,7 @@ const Cards = ({
                   <p className="text-black text-lg sm:text-xl font-semibold line-clamp-2">
                     {title}
                   </p>
-                  <p className="text-red-900 font-semibold text-xs sm:text-base">
+                  <p className="text-[#691b32] font-semibold text-xs sm:text-base">
                     <EnvironmentOutlined /> {location}
                   </p>
                 </div>

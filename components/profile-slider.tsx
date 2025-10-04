@@ -27,7 +27,7 @@ const cardCorousel: React.FC = () => {
   ];
   return (
     <div className="">
-      <div className="px-20 md:px-20 xl:px-60 bg-red-900 flex justify-center p-20 flex-col text-center">
+      <div className="px-20 md:px-20 xl:px-60 bg-[#691b32] flex justify-center p-20 flex-col text-center">
         <p className=" text-yellow-600 text-2xl font-semibold">
           SCHOOL MANAGEMENT
         </p>

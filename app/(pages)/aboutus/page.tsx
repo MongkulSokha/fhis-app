@@ -13,7 +13,7 @@ export default function AboutUs() {
     <main className="App">
       <Navbar />
       <div className="relative bg-[url(/img1.jpg)]">
-        <div className="flex items-center justify-center text-white z-20 bg-gradient-to-b from-red-900 to-transparent flex-col p-20">
+        <div className="flex items-center justify-center text-white z-20 bg-gradient-to-b from-[#691b32] to-transparent flex-col p-20">
           <p className="text-4xl font-bold my-10 uppercase">About Us</p>
         </div>
       </div>

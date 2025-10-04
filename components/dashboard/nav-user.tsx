@@ -81,10 +81,10 @@ export function NavUser({
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem className="bg-[#691b32]">
               <button
                 onClick={() => signOut({ callbackUrl: "/signin" })}
-                className="bg-red-600 text-white px-3 py-1 rounded"
+                className="bg-[#691b32] text-white px-3 py-1 rounded"
               >
                 Sign Out
               </button>

@@ -18,7 +18,7 @@ const Footers: React.FC = () => {
       <Footer
         className="bottom-0 flex p-20 flex-col"
         style={{
-          backgroundColor: "#570614ff",
+          backgroundColor: "#691b32",
           textAlign: "center",
           alignContent: "center",
           justifyContent: "center",

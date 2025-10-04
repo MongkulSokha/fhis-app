@@ -4,9 +4,9 @@ const theme: ThemeConfig = {
   token: {
     fontFamily: "'Noto Sans Khmer', Geist, sans-serif",
     fontSize: 17,
-    colorPrimary: "#ffffffff",
+    colorPrimary: "#691b32",
     colorTextBase: "#ffffffff",
-    colorBgBase: "#570614ff",
+    colorBgBase: "#691b32",
   },
   components: {
     Menu: {
