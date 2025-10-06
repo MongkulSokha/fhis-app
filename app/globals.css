@@ -3,8 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 body {
@@ -92,7 +90,7 @@ body {
 }
 
 .ant-menu-light {
-  background: #691b32 !important;
+  background: transparent !important;
 }
 
 .ant-menu-item-selected {
