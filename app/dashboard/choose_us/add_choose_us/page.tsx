@@ -1,0 +1,30 @@
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import ProtectedLayout from "../../ProtectedLayout";
+import WhyUsForm from "@/components/dashboard/form/why-use-form";
+import { createCard } from "@/app/action/cardDataAction";
+
+export default function AddChooseUsPage() {
+  return (
+    <ProtectedLayout>
+      <SidebarProvider
+        style={
+          {
+            "--sidebar-width": "calc(var(--spacing) * 72)",
+            "--header-height": "calc(var(--spacing) * 12)",
+          } as React.CSSProperties
+        }
+      >
+        <SidebarInset>
+          <div className="flex flex-1 flex-col">
+            <div className="@container/main flex flex-1 flex-col gap-2">
+              <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6 p-5">
+                <h1 className="text-2xl font-bold">Add Why Choose Us Card</h1>
+                <WhyUsForm createCard={createCard} />
+              </div>
+            </div>
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
+    </ProtectedLayout>
+  );
+}
