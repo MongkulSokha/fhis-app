@@ -27,9 +27,10 @@ const CurriculumSlider: React.FC = () => {
   ];
   return (
     <div>
-      <div className="px-20 md:px-20 xl:px-60 bg-gray-100 h-full flex flex-col text-center pt-20 px-20">
+      <div className="px-20 md:px-20 xl:px-60 bg-gray-100 h-full flex flex-col text-center pt-20">
         <p className="text-2xl font-bold uppercase">Curriculum</p>
         <Carousel
+          autoplay
           className="flex p-10"
           dots={false}
           arrows

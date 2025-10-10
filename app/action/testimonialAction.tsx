@@ -1,15 +1,23 @@
 "use server";
 
-import { neon } from "@neondatabase/serverless";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { put, del } from "@vercel/blob";
-
-const sql = neon(process.env.DATABASE_URL!);
+import { pool } from "@/lib/db";
 
 //fetch card data
 export async function getTestimonialData() {
-  return await sql`SELECT id, name, img, position, text, created_at FROM testimonialdata ORDER BY created_at DESC`;
+  const [rows] = await pool.query(
+    `SELECT id, name, img, position, text, created_at FROM testimonialdata ORDER BY created_at DESC`
+  );
+  return rows as {
+    id: number;
+    name: string;
+    img: string;
+    position: string;
+    text: string;
+    created_at: string;
+  }[];
 }
 
 // Insert new cards
@@ -33,10 +41,13 @@ export async function createTestimonial(formData: FormData) {
     imgUrl = url;
   }
 
-  await sql`
+  await pool.query(
+    `
     INSERT INTO testimonialdata (name, img, position, text)
-    VALUES (${name}, ${imgUrl}, ${position}, ${text})
-  `;
+    VALUES (?, ?, ?, ?)
+  `,
+    [name, imgUrl, position, text]
+  );
 
   revalidatePath("/dashboard/testimonial");
 
@@ -48,12 +59,14 @@ export async function deleteTestimonial(id: number) {
   if (!id) throw new Error("ID is required to delete a testimonial");
 
   // Get the card first so we know the image path
-  const [testimonial] = await sql`
-    SELECT img FROM testimonialdata
-    WHERE id = ${id};
-  `;
+  const [rows] = (await pool.query(
+    "SELECT img FROM testimonialdata WHERE id = ?",
+    [id]
+  )) as any[];
 
-  if (!testimonial) throw new Error("Testimonial not found");
+  if (!rows) throw new Error("Testimonial not found");
+
+  const testimonial = rows[0];
 
   // Delete the image file from Vercel Blob
   if (testimonial.img) {
@@ -68,13 +81,6 @@ export async function deleteTestimonial(id: number) {
   }
 
   // Delete the card row
-  const result = await sql`
-    DELETE FROM testimonialdata
-    WHERE id = ${id}
-    RETURNING *;
-  `;
-
-  revalidatePath("/dashboard/testimonial");
-
-  return result;
+  await pool.query(`DELETE FROM testimonialdata WHERE id = ?`, [id]);
+  return { success: true };
 }

@@ -26,12 +26,14 @@ export function NavMain({
       <SidebarMenu>
         {items.map((item) => {
           const isActive = pathname === item.url;
-
           return (
             <SidebarMenuItem key={item.title}>
-              <Link href={item.url} className="flex items-center gap-2r">
+              <Link
+                prefetch={true}
+                href={item.url}
+                className="flex items-center gap-2r"
+              >
                 <SidebarMenuButton
-                  size={"lg"}
                   tooltip={item.title}
                   className={
                     isActive
@@ -39,8 +41,10 @@ export function NavMain({
                       : "hover:bg-muted hover:text-foreground cursor-pointer"
                   }
                 >
-                  <div>{item.icon && <item.icon />}</div>
-                  <span className="text-base">{item.title}</span>
+                  <>
+                    {item.icon && <item.icon />}
+                    {item.title}
+                  </>
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>

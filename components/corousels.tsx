@@ -3,6 +3,7 @@
 import React from "react";
 import { Layout, Menu, theme } from "antd";
 import { Carousel } from "antd";
+import useSWR from "swr";
 
 const { Content } = Layout;
 
@@ -21,50 +22,29 @@ const contentStyle: React.CSSProperties = {
   display: "block",
 };
 
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
 const Corousel: React.FC = () => {
-  const onChange = (currentSlide: number) => {
-    console.log(currentSlide);
-  };
+  const { data: sliders, mutate } = useSWR("/api/slider", fetcher);
+
+  if (!sliders) return null;
 
   return (
     <Content className="relative " style={{ padding: "0" }}>
       <Carousel autoplay arrows infinite={true}>
-        <div className="relative ">
-          <img style={contentStyle} src="/img1.jpg" alt="" />
-          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-[#691b32] to-transparent flex-col p-20">
-            <p className="text-5xl md:text-6xl font-bold mb-10 mx-0 md:mx-0 xl:mx-50">
-              Forest Hill International School
-            </p>
-            <p className="text-2xl line-clamp-5 mx-0 md:mx-0 xl:mx-50">
-              "The education of even a small child, therefore, does not aim at
-              preparing him for school, but for life."
-            </p>
+        {sliders.map((slider: any, idx: number) => (
+          <div className="relative ">
+            <img style={contentStyle} src={slider.img} alt="" />
+            <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-[#691b32] to-transparent flex-col p-20">
+              <p className="text-5xl md:text-6xl font-bold mb-10 mx-0 md:mx-0 xl:mx-50">
+                {slider.title}
+              </p>
+              <p className="text-2xl line-clamp-5 mx-0 md:mx-0 xl:mx-50">
+                {slider.text}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="relative">
-          <img style={contentStyle} src="/img2.jpg" alt="" />
-          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-[#691b32] to-transparent flex-col p-20">
-            <p className="text-5xl md:text-6xl font-bold mb-10 mx-0 md:mx-0 xl:mx-50">
-              International Early Year Curriculum
-            </p>
-            <p className="text-2xl line-clamp-5 mx-0 md:mx-0 xl:mx-50">
-              Cambridge Early Year Curriculum to Cambridge Upper Secondary
-              Curriculum
-            </p>
-          </div>
-        </div>
-        <div className="relative">
-          <img style={contentStyle} src="/Halloween.png" alt="" />
-          <div className="absolute inset-0 flex items-start justify-center text-white z-20 bg-gradient-to-r from-[#691b32] to-transparent flex-col p-20">
-            <p className="text-5xl md:text-6xl font-bold mb-10 mx-0 md:mx-0 xl:mx-50">
-              Halloween Event
-            </p>
-            <p className="text-2xl line-clamp-5 mx-0 md:mx-0 xl:mx-50">
-              Students wore different costumes, and they were selected for the
-              best costume awards and performance awards.
-            </p>
-          </div>
-        </div>
+        ))}
       </Carousel>
     </Content>
   );

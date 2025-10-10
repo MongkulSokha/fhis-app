@@ -1,0 +1,11 @@
+{
+  "Events": {
+    "title": "Event Management",
+    "add": "Add Event",
+    "delete": "Delete",
+    "fields": {
+      "title": "Title",
+      "details": "Details"
+    }
+  }
+}

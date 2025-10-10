@@ -1,19 +1,12 @@
 "use client";
 
-import {
-  IconCreditCard,
-  IconDotsVertical,
-  IconLogout,
-  IconNotification,
-  IconUserCircle,
-} from "@tabler/icons-react";
+import { IconDotsVertical } from "@tabler/icons-react";
 import { signOut } from "next-auth/react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -25,7 +18,6 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { SignOutButton } from "@clerk/nextjs";
 
 export function NavUser({
   user,
@@ -81,10 +73,10 @@ export function NavUser({
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="bg-[#691b32]">
+            <DropdownMenuItem>
               <button
                 onClick={() => signOut({ callbackUrl: "/signin" })}
-                className="bg-[#691b32] text-white px-3 py-1 rounded"
+                className=" text-black rounded"
               >
                 Sign Out
               </button>

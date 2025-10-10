@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 const welcome = () => {
   return (
     <div>
-      <div className="px-20 md:px-20 xl:px-50 flex p-20 flex-col text-center items-center ">
+      <div className="px-15 md:px-20 xl:px-50 flex p-20 flex-col text-center items-center ">
         <p className="text-4xl font-semibold pb-5">Welcome to</p>
         <p className="text-4xl font-bold">FORESTHILL INTERNATIONAL SCHOOL</p>
         <div className="flex items-center h-1 bg-[#691b32] mt-10 w-65"></div>

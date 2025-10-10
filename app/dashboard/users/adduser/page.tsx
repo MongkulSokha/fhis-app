@@ -1,6 +1,6 @@
-import SignUpPage from "@/app/dashboard/signup/page";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import ProtectedLayout from "../../ProtectedLayout";
+import SignUpPage from "@/components/dashboard/form/user-form";
 
 export const dynamic = "force-dynamic";
 

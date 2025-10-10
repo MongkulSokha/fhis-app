@@ -12,6 +12,8 @@ import CardList from "@/components/cardlist";
 import TestimonialList from "@/components/testimoniallist";
 import Popup from "@/components/popup";
 import Reveal from "@/components/reveal";
+import TopNavbar from "@/components/top-navbar";
+import ProfileCard from "@/components/profile-card";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +23,7 @@ export default async function Home() {
       <Reveal>
         <Popup />
       </Reveal>
+      <TopNavbar />
       <Navbar />
       <Corousel />
       <Reveal delay={0.1}>

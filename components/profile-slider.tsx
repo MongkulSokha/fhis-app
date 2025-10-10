@@ -32,7 +32,8 @@ const cardCorousel: React.FC = () => {
           SCHOOL MANAGEMENT
         </p>
         <Carousel
-          className="flex p-10"
+          autoplay
+          className="flex p-15"
           dots={false}
           arrows
           infinite={true}

@@ -1,15 +1,24 @@
 "use server";
 
-import { neon } from "@neondatabase/serverless";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { put, del } from "@vercel/blob";
-
-const sql = neon(process.env.DATABASE_URL!);
+import { pool } from "@/lib/db";
 
 //fetch card data
 export async function getCardData() {
-  return await sql`SELECT id, title, img, date, location, time, created_at FROM carddata ORDER BY created_at DESC`;
+  const [rows] = await pool.query(
+    `SELECT id, title, img, date, location, time, created_at FROM carddata ORDER BY created_at DESC`
+  );
+  return rows as {
+    id: number;
+    name: string;
+    img: string;
+    date: string;
+    location: string;
+    time: string;
+    created_at: string;
+  }[];
 }
 
 function formatTime12Hour(time24: string) {
@@ -42,27 +51,26 @@ export async function createCard(formData: FormData) {
     imgUrl = url;
   }
 
-  await sql`
-    INSERT INTO carddata (title, img, date, location, time)
-    VALUES (${title}, ${imgUrl}, ${date}, ${location}, ${timeFrame})
-  `;
+  await pool.query(
+    "INSERT INTO carddata (title, img, date, location, time) VALUES (?, ?, ?, ?, ?)",
+    [title, imgUrl, date, location, timeFrame]
+  );
 
-  revalidatePath("/dashboard");
+  revalidatePath("/dashboard/events");
 
-  redirect("/dashboard");
+  redirect("/dashboard/events");
 }
 
-//Delete card
 // Delete card
 export async function deleteCard(id: number) {
   if (!id) throw new Error("ID is required to delete a card");
 
-  // Get the card first so we know the image path
-  const [card] = await sql`
-    SELECT img FROM carddata
-    WHERE id = ${id};
-  `;
+  // Fetch the card first
+  const [rows] = (await pool.query("SELECT img FROM carddata WHERE id = ?", [
+    id,
+  ])) as any[];
 
+  const card = rows[0];
   if (!card) throw new Error("Card not found");
 
   // Delete the image file from Vercel Blob
@@ -77,14 +85,8 @@ export async function deleteCard(id: number) {
     }
   }
 
-  // Delete the card row
-  const result = await sql`
-    DELETE FROM carddata
-    WHERE id = ${id}
-    RETURNING *;
-  `;
+  // Delete the card
+  await pool.query(`DELETE FROM carddata WHERE id = ?`, [id]);
 
-  revalidatePath("/dashboard");
-
-  return result;
+  return { success: true };
 }

@@ -3,10 +3,24 @@
 import * as React from "react";
 import Link from "next/link";
 import {
+  IconBrandAppgallery,
+  IconBriefcase,
+  IconCalendarEvent,
+  IconCarouselHorizontal,
+  IconCategory,
   IconDashboard,
-  IconSearch,
+  IconMail,
+  IconMenu,
+  IconNumber,
+  IconPhoneCall,
+  IconSchool,
   IconSettings,
+  IconSettings2,
+  IconSlideshow,
+  IconStar,
+  IconUpload,
   IconUserCircle,
+  IconUsers,
   IconUserShare,
 } from "@tabler/icons-react";
 import { NavMain } from "@/components/dashboard/nav-main";
@@ -41,21 +55,80 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   const navMain = [
     { title: "Dashboard", url: "/dashboard", icon: IconDashboard },
-    { title: "Users", url: "/dashboard/users", icon: IconUserCircle },
+    { title: "Menu", url: "/dashboard/menu", icon: IconMenu },
+    { title: "Events", url: "/dashboard/events", icon: IconCalendarEvent },
     {
       title: "Testimonial",
       url: "/dashboard/testimonial",
       icon: IconUserShare,
     },
+    { title: "Newsletter", url: "/dashboard/newsletter", icon: IconMail },
+    { title: "Career", url: "/dashboard/career", icon: IconBriefcase },
   ];
 
   const navSecondary = [
-    { title: "Settings", url: "", icon: IconSettings },
-    { title: "Search", url: "", icon: IconSearch },
+    {
+      title: "Configuration",
+      url: "#",
+      icon: IconSettings,
+      isActive: true,
+      items: [
+        {
+          title: "Slider",
+          url: "/dashboard/slider",
+          icon: IconSlideshow,
+        },
+        {
+          title: "Popup",
+          url: "/dashboard/popup",
+          icon: IconUpload,
+        },
+        {
+          title: "Curriculum Carousel",
+          url: "/dashboard/curriculum",
+          icon: IconSchool,
+        },
+        {
+          title: "School Management",
+          url: "/dashboard/management",
+          icon: IconUsers,
+        },
+        {
+          title: "Why Choose Us",
+          url: "/dashboard/choose_us",
+          icon: IconStar,
+        },
+        {
+          title: "Counter",
+          url: "/dashboard/counter",
+          icon: IconNumber,
+        },
+        {
+          title: "Gallery Category",
+          url: "/dashboard/category",
+          icon: IconCategory,
+        },
+        {
+          title: "Gallery",
+          url: "/dashboard/gallery",
+          icon: IconBrandAppgallery,
+        },
+        {
+          title: "Users",
+          url: "/dashboard/users",
+          icon: IconUserCircle,
+        },
+        {
+          title: "Configuration",
+          url: "/dashboard/configuration",
+          icon: IconSettings2,
+        },
+      ],
+    },
   ];
 
   return (
-    <Sidebar collapsible="offcanvas" {...props}>
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -76,9 +149,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
       <SidebarContent>
         <NavMain items={navMain} />
-        <NavSecondary items={navSecondary} className="mt-auto" />
+        <NavSecondary items={navSecondary} className="auto" />
       </SidebarContent>
-
       <SidebarFooter>
         {user ? (
           <NavUser user={user} />

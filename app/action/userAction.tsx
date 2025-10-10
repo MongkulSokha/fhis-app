@@ -1,26 +1,19 @@
 "use server";
 
-import { neon } from "@neondatabase/serverless";
+import { pool } from "@/lib/db";
 import { revalidatePath } from "next/cache";
-
-const sql = neon(process.env.DATABASE_URL!);
 
 //fetch card data
 export async function getUserData() {
-  return await sql`SELECT id, name, email FROM users`;
+  const [rows] = await pool.query(`SELECT id, name, email FROM users`);
+  return rows as {
+    id: number;
+    name: string;
+    email: string;
+  }[];
 }
 
 export async function deleteUser(id: number) {
-  if (!id) throw new Error("ID is required to delete a card");
-
-  // Delete the card row
-  const result = await sql`
-    DELETE FROM users
-    WHERE id = ${id}
-    RETURNING *;
-  `;
-
-  revalidatePath("/dashboard");
-
-  return result;
+  await pool.query(`DELETE FROM users WHERE id = ?`, [id]);
+  return { success: true };
 }
