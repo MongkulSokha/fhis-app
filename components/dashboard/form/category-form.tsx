@@ -12,10 +12,10 @@ import {
 } from "@/app/action/popupAction";
 import PublishedCheckbox from "../../ui/published-checkbox";
 
-export default function CurriculumForm({
-  createCurriculum,
+export default function CategoryForm({
+  createCategory,
 }: {
-  createCurriculum: (formData: FormData) => void;
+  createCategory: (formData: FormData) => void;
 }) {
   const [popup, setPopup] = useState<any[]>([]);
 
@@ -37,27 +37,26 @@ export default function CurriculumForm({
         <CardContent>
           {popup.slice(0, 1).map((popups: any) => (
             <div key={popups.id} className="">
-              <form action={createCurriculum} className="space-y-4">
-                <Image
-                  className="pb-2"
-                  preview={false}
-                  height={200}
-                  src="/hsk.svg"
-                />
-                <Label htmlFor="picture">Picture</Label>
+              <form action={createCategory} className="space-y-4">
+                <Label htmlFor="name">Name</Label>
                 <Input
-                  id="picture"
-                  type="file"
-                  name="img"
-                  accept="image/*"
-                  className="border w-full"
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  className="border p-2 w-full"
+                />
+                <PublishedCheckbox
+                  id={popups.id}
+                  initialValue={popups.published}
+                  onToggle={handleToggle}
+                  label="Published"
                 />
 
                 <Button
                   type="submit"
                   className="bg-[#691b32] text-white px-4 py-2 rounded"
                 >
-                  Create
+                  Add
                 </Button>
               </form>
             </div>

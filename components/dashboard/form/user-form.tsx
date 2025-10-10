@@ -61,15 +61,10 @@ const SignUpPage = () => {
             />
             <Button
               type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded"
+              className="bg-[#691b32] text-white px-4 py-2 rounded"
             >
-              Signup
+              Add User
             </Button>
-            <Link href="/dashboard/users">
-              <Button className="bg-red-600 text-white px-4 py-2 rounded mx-2">
-                Cancel
-              </Button>
-            </Link>
           </form>
         </CardContent>
       </Card>

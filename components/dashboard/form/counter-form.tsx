@@ -5,30 +5,27 @@ import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
 import { Input } from "../../ui/input";
 import { Label } from "../../ui/label";
-import QuillEditor from "@/components/ui/quill-editor";
-import CancelButton from "@/components/ui/cancel-button";
+import { Textarea } from "../../ui/textarea";
 
-export default function CareerForm({
-  createSlider,
+export default function CounterForm({
+  createCounter,
 }: {
-  createSlider: (formData: FormData) => void;
+  createCounter: (formData: FormData) => void;
 }) {
-  const today = new Date().toISOString().split("T")[0];
-  const now = new Date();
   return (
     <div className="flex flex-col gap-6">
       <Card>
         <CardContent>
-          <form action={createSlider} className="space-y-4">
-            <Label htmlFor="title">Title</Label>
+          <form action={createCounter} className="space-y-4">
+            <Label htmlFor="name">Title</Label>
             <Input
               type="text"
               name="title"
-              placeholder="Title"
+              placeholder="Name"
               required
               className="border p-2 w-full"
             />
-            <Label htmlFor="picture">Picture</Label>
+            <Label htmlFor="picture">Icon</Label>
             <Input
               id="picture"
               type="file"
@@ -36,23 +33,19 @@ export default function CareerForm({
               accept="image/*"
               className="border w-full"
             />
-            <Label htmlFor="description">Deadline</Label>
+            <Label htmlFor="name">Number</Label>
             <Input
-              type="date"
-              name="date"
-              required
+              type="text"
+              name="number"
+              placeholder="Number"
               className="border p-2 w-full"
-              defaultValue={today}
             />
-            <Label htmlFor="description">Description</Label>
-            <QuillEditor />
             <Button
               type="submit"
-              className="hover:bg-blue-800 cursor-pointer bg-blue-500 text-white px-4 py-2 rounded"
+              className="bg-[#691b32] text-white px-4 py-2 rounded"
             >
               Create
             </Button>
-            <CancelButton />
           </form>
         </CardContent>
       </Card>

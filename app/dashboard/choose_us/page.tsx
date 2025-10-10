@@ -1,10 +1,16 @@
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import TableData from "@/components/dashboard/data-table/event-data";
 import { Button } from "@/components/ui/button";
 import { IconPlus } from "@tabler/icons-react";
-import Link from "next/link";
 import ProtectedLayout from "../ProtectedLayout";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import WhyUsData from "@/components/dashboard/data-table/why-us-data";
+import WhyUsForm from "@/components/dashboard/form/why-use-form";
+import { createCard } from "@/app/action/cardDataAction";
 
 export const dynamic = "force-dynamic";
 
@@ -20,16 +26,37 @@ export default async function Page() {
         }
       >
         <SidebarInset>
-          <div className="flex flex-1 flex-col">
+          <div className="flex flex-1 flex-col mx-5">
             <div className="@container/main flex flex-1 flex-col gap-2">
               <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6 p-5">
-                <h1 className="text-2xl font-bold">Why Choose Us Management</h1>
-                <Link prefetch={true} href="/dashboard/choose_us/add_choose_us">
-                  <Button variant="outline" size="sm">
-                    <IconPlus />
-                    <span className="hidden lg:inline">Add Card</span>
-                  </Button>
-                </Link>
+                <div className="flex items-center justify-between">
+                  <h1 className="text-2xl font-bold">
+                    Why Choose Us Management
+                  </h1>
+                  <Sheet>
+                    <SheetTrigger asChild>
+                      <Button
+                        className="flex items-center gap-2"
+                        variant="outline"
+                        size="sm"
+                      >
+                        <IconPlus />
+                        <span className="hidden lg:inline">Add Card</span>
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent>
+                      <SheetTitle />
+                      <div className="flex flex-1 flex-col">
+                        <div className="@container/main flex flex-1 flex-col gap-2">
+                          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6 p-5">
+                            <h1 className="text-2xl font-bold">Add Card</h1>
+                            <WhyUsForm createCard={createCard} />
+                          </div>
+                        </div>
+                      </div>
+                    </SheetContent>
+                  </Sheet>
+                </div>
                 <WhyUsData />
               </div>
             </div>

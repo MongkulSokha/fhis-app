@@ -10,7 +10,6 @@ import {
   getVisiblePopupData,
   updatePopupVisibility,
 } from "@/app/action/popupAction";
-import PublishedCheckbox from "../../ui/published-checkbox";
 
 export default function ConfigForm({
   createPopup,
@@ -38,7 +37,7 @@ export default function ConfigForm({
           {popup.slice(0, 1).map((popups: any) => (
             <div key={popups.id} className="p-5">
               <form action="" className="space-y-4">
-                <Label htmlFor="address">Address</Label>
+                <Label htmlFor="address">School Address</Label>
                 <Input
                   type="text"
                   name="address"
@@ -126,6 +125,7 @@ export default function ConfigForm({
                   className="border p-2 w-full"
                 />
 
+                <Label htmlFor="logo">Logo</Label>
                 <Image
                   className="border border-gray-400 rounded-md"
                   preview={false}

@@ -1,6 +1,6 @@
 import "@ant-design/v5-patch-for-react-19";
-import Navbar from "@/components/navbars";
-import Footers from "@/components/footer";
+import Navbar from "@/components/homepage/navbars";
+import Footers from "@/components/homepage/footer";
 import {
   Field,
   FieldGroup,
@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "antd";
 import { Button } from "@/components/ui/button";
-import TopNavbar from "@/components/top-navbar";
+import TopNavbar from "@/components/homepage/top-navbar";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,

@@ -35,16 +35,47 @@ export default function SchoolManagementForm({
       <Card>
         <CardContent>
           {popup.slice(0, 1).map((popups: any) => (
-            <div key={popups.id} className="p-5">
-              <Image
-                className="pb-2"
-                preview={false}
-                height={300}
-                src="/hsk.svg"
-              />
+            <div key={popups.id} className="">
+              <form action={createProfile} className="space-y-4">
+                <Label htmlFor="name">Full Name</Label>
+                <Input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  required
+                  className="border p-2 w-full"
+                />
 
-              <form action={createProfile} className="space-y-4 pt-5">
-                <Label htmlFor="picture">Picture</Label>
+                <Label htmlFor="name">Title</Label>
+                <Input
+                  type="text"
+                  name="title"
+                  placeholder="Title"
+                  required
+                  className="border p-2 w-full"
+                />
+
+                <Label htmlFor="name">Email Address</Label>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                  className="border p-2 w-full"
+                />
+
+                <div className="w-25 h-25 rounded-full overflow-hidden">
+                  <Image
+                    preview={false}
+                    src="/profile.svg"
+                    alt="Mrs. Swe Swe Aung"
+                    width={110}
+                    height={140}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+
+                <Label htmlFor="picture">Profile Photo</Label>
                 <Input
                   id="picture"
                   type="file"

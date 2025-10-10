@@ -18,6 +18,7 @@ import {
 } from "@/app/action/navbarAction";
 import ConfirmDeleteButton from "../../ui/delete-button";
 import PublishedCheckbox from "../../ui/published-checkbox";
+import ActionDropdown from "@/components/ui/action-dropdown";
 
 const ITEMS_PER_PAGE = 15;
 
@@ -72,7 +73,6 @@ const MenuData = () => {
             <TableHead>Parent Menu</TableHead>
             <TableHead>Published</TableHead>
             <TableHead>Order</TableHead>
-            <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -101,7 +101,7 @@ const MenuData = () => {
                 <p className="line-clamp-[1]">{card.order}</p>
               </TableCell>
               <TableCell>
-                <ConfirmDeleteButton
+                {/* <ConfirmDeleteButton
                   onConfirm={async () => {
                     const res = await deleteNavbarItem(card.id);
 
@@ -109,7 +109,8 @@ const MenuData = () => {
                       prev.filter((item) => item.id !== card.id)
                     );
                   }}
-                />
+                /> */}
+                <ActionDropdown />
               </TableCell>
             </TableRow>
           ))}

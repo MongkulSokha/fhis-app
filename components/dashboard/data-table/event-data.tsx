@@ -16,6 +16,7 @@ import { Button } from "../../ui/button";
 import ConfirmDeleteButton from "../../ui/delete-button";
 import PublishedCheckbox from "../../ui/published-checkbox";
 import { updatePopupVisibility } from "@/app/action/popupAction";
+import ActionDropdown from "@/components/ui/action-dropdown";
 
 const ITEMS_PER_PAGE = 7;
 
@@ -52,7 +53,6 @@ const TableData = () => {
             <TableHead>Time</TableHead>
             <TableHead>Location</TableHead>
             <TableHead>Published</TableHead>
-            <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -78,14 +78,15 @@ const TableData = () => {
                 />
               </TableCell>
               <TableCell>
-                {/* <Button className="">Edit</Button> */}
-                <ConfirmDeleteButton
+                {/* <ConfirmDeleteButton
                   onConfirm={async () => {
                     const res = await deleteCard(card.id);
 
                     setCards((prev) => prev.filter((u) => u.id !== card.id));
                   }}
-                />
+                /> */}
+
+                <ActionDropdown />
               </TableCell>
             </TableRow>
           ))}

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Image } from "antd";
-import { Dialog, DialogContent, DialogOverlay } from "./ui/dialog";
+import { Dialog, DialogContent, DialogOverlay } from "../ui/dialog";
 import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
 import { getPopupData } from "@/app/action/popupAction";
 import Link from "next/link";

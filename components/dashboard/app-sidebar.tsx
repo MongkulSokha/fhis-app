@@ -6,13 +6,11 @@ import {
   IconBrandAppgallery,
   IconBriefcase,
   IconCalendarEvent,
-  IconCarouselHorizontal,
   IconCategory,
   IconDashboard,
   IconMail,
   IconMenu,
   IconNumber,
-  IconPhoneCall,
   IconSchool,
   IconSettings,
   IconSettings2,
@@ -62,13 +60,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       url: "/dashboard/testimonial",
       icon: IconUserShare,
     },
-    { title: "Newsletter", url: "/dashboard/newsletter", icon: IconMail },
     { title: "Career", url: "/dashboard/career", icon: IconBriefcase },
+    { title: "Newsletter", url: "/dashboard/newsletter", icon: IconMail },
   ];
 
   const navSecondary = [
     {
-      title: "Configuration",
+      title: "Setting",
       url: "#",
       icon: IconSettings,
       isActive: true,
@@ -134,10 +132,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton
               asChild
-              className="data-[slot=sidebar-menu-button]:!p-1.5"
+              className="data-[slot=sidebar-menu-button]:!p-1.5 "
             >
               <Link href="/">
-                <img className="!size-5" src="/fhis-logo.svg" alt="" />
+                <img className="!size-5" src="/fhis-logo-white.svg" alt="" />
                 <span className="text-base font-semibold">
                   Forest Hill International School
                 </span>
@@ -149,7 +147,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
       <SidebarContent>
         <NavMain items={navMain} />
-        <NavSecondary items={navSecondary} className="auto" />
+        <NavSecondary items={navSecondary} />
       </SidebarContent>
       <SidebarFooter>
         {user ? (

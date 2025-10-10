@@ -5,6 +5,7 @@ import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
 import { Input } from "../../ui/input";
 import { Label } from "../../ui/label";
+import CancelButton from "@/components/ui/cancel-button";
 
 export default function TestimonialForm({
   createTestimonial,
@@ -49,15 +50,11 @@ export default function TestimonialForm({
             />
             <Button
               type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded"
+              className="hover:bg-blue-800 cursor-pointer bg-blue-500 text-white px-4 py-2 rounded"
             >
-              Add Testimonial
+              Create
             </Button>
-            <Link href="/dashboard">
-              <Button className="bg-red-600 text-white px-4 py-2 rounded mx-2">
-                Cancel
-              </Button>
-            </Link>
+            <CancelButton />
           </form>
         </CardContent>
       </Card>

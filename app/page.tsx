@@ -1,19 +1,19 @@
 import "@ant-design/v5-patch-for-react-19";
-import Navbar from "@/components/navbars";
-import Corousel from "@/components/corousels";
-import Footers from "@/components/footer";
-import CardSlider from "@/components/profile-slider";
-import CurriculumSlider from "@/components/curriculum-slider";
-import Welcome from "@/components/welcome";
-import WhyChooseUs from "@/components/why-choose";
-import Counter from "@/components/counter";
-import Gallerys from "@/components/gallery";
-import CardList from "@/components/cardlist";
-import TestimonialList from "@/components/testimoniallist";
-import Popup from "@/components/popup";
-import Reveal from "@/components/reveal";
-import TopNavbar from "@/components/top-navbar";
-import ProfileCard from "@/components/profile-card";
+import Navbar from "@/components/homepage/navbars";
+import Corousel from "@/components/homepage/corousels";
+import Footers from "@/components/homepage/footer";
+import CardSlider from "@/components/homepage/profile-slider";
+import CurriculumSlider from "@/components/homepage/curriculum-slider";
+import Welcome from "@/components/homepage/welcome";
+import WhyChooseUs from "@/components/homepage/why-choose";
+import Counter from "@/components/homepage/counter";
+import Gallerys from "@/components/homepage/gallery";
+import CardList from "@/components/homepage/cardlist";
+import TestimonialList from "@/components/homepage/testimoniallist";
+import Popup from "@/components/homepage/popup";
+import Reveal from "@/components/homepage/reveal";
+import TopNavbar from "@/components/homepage/top-navbar";
+import ProfileCard from "@/components/homepage/profile-card";
 
 export const dynamic = "force-dynamic";
 

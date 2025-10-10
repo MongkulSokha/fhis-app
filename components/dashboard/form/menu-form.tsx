@@ -13,6 +13,11 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { addNavbarItem, getNavbarItems } from "@/app/action/navbarAction";
 import Link from "next/link";
+import { Textarea } from "../../ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Image } from "antd";
+import QuillEditor from "@/components/ui/quill-editor";
+import CancelButton from "@/components/ui/cancel-button";
 
 interface NavbarItem {
   id: number;
@@ -65,7 +70,9 @@ export default function NavbarForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4 p-4 border rounded-md">
       <div>
-        <label className="block mb-1 font-medium">Label</label>
+        <Label className="pb-3" htmlFor="picture">
+          Label
+        </Label>
         <Input
           value={label}
           onChange={(e) => setLabel(e.target.value)}
@@ -74,7 +81,9 @@ export default function NavbarForm() {
       </div>
 
       <div>
-        <label className="block mb-1 font-medium">Href / Alias</label>
+        <Label className="pb-3" htmlFor="picture">
+          Href / Alias
+        </Label>
         <Input
           value={href}
           onChange={(e) => setHref(e.target.value)}
@@ -83,7 +92,9 @@ export default function NavbarForm() {
       </div>
 
       <div>
-        <label className="block mb-1 font-medium">Parent Menu</label>
+        <Label className="pb-3" htmlFor="picture">
+          Parent Menu
+        </Label>
         <Select
           onValueChange={(val) =>
             setParentId(val === "null" ? null : Number(val))
@@ -104,8 +115,35 @@ export default function NavbarForm() {
         </Select>
       </div>
 
+      <Label htmlFor="picture">Content</Label>
+      <QuillEditor />
+
+      <Label htmlFor="picture">Feature Image</Label>
+      <Image
+        className="pb-2 rounded-2xl object-cover"
+        preview={false}
+        height={300}
+        src="/img1.jpg"
+      />
+      <Input
+        id="picture"
+        type="file"
+        name="img"
+        accept="image/*"
+        className="border w-full"
+      />
+      <Label htmlFor="title">Title</Label>
+      <Input
+        type="text"
+        name="title"
+        placeholder="Title"
+        className="border w-full"
+      />
+
       <div>
-        <label className="block mb-1 font-medium">Order</label>
+        <Label className="pb-3" htmlFor="picture">
+          Order
+        </Label>
         <Input
           type="number"
           value={order ?? ""}
@@ -123,12 +161,13 @@ export default function NavbarForm() {
         <span>Published</span>
       </div>
 
-      <Button type="submit">Add Menu Item</Button>
-      <Link href="/dashboard/menu">
-        <Button className="bg-red-600 text-white px-4 py-2 rounded-lg mx-2">
-          Cancel
-        </Button>
-      </Link>
+      <Button
+        type="submit"
+        className="hover:bg-blue-800 cursor-pointer bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Create
+      </Button>
+      <CancelButton />
     </form>
   );
 }

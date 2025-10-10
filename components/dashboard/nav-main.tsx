@@ -37,14 +37,12 @@ export function NavMain({
                   tooltip={item.title}
                   className={
                     isActive
-                      ? "bg-[#570614ff]/20 text-[#570614ff] font-bold cursor-pointer"
-                      : "hover:bg-muted hover:text-foreground cursor-pointer"
+                      ? "bg-white text-[#570614ff] font-bold cursor-pointer hover:text-sidebar-primary"
+                      : "hover:bg-background hover:text-sidebar-primary cursor-pointer"
                   }
                 >
-                  <>
-                    {item.icon && <item.icon />}
-                    {item.title}
-                  </>
+                  {item.icon && <item.icon />}
+                  {item.title}
                 </SidebarMenuButton>
               </Link>
             </SidebarMenuItem>

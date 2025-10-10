@@ -14,6 +14,7 @@ import { deleteSlider, getSliderData } from "@/app/action/sliderAction";
 import ConfirmDeleteButton from "../../ui/delete-button";
 import PublishedCheckbox from "../../ui/published-checkbox";
 import { updatePopupVisibility } from "@/app/action/popupAction";
+import ActionDropdown from "@/components/ui/action-dropdown";
 
 const SliderData = () => {
   const [sliders, setSliders] = useState<any[]>([]);
@@ -38,7 +39,6 @@ const SliderData = () => {
           <TableHead>Image</TableHead>
           <TableHead>Description</TableHead>
           <TableHead>Published</TableHead>
-          <TableHead>Action</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -61,13 +61,14 @@ const SliderData = () => {
               />
             </TableCell>
             <TableCell>
-              <ConfirmDeleteButton
+              {/* <ConfirmDeleteButton
                 onConfirm={async () => {
                   const res = await deleteSlider(slider.id);
 
                   setSliders((prev) => prev.filter((u) => u.id !== slider.id));
                 }}
-              />
+              /> */}
+              <ActionDropdown />
             </TableCell>
           </TableRow>
         ))}

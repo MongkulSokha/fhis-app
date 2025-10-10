@@ -14,6 +14,7 @@ import { getUserData } from "@/app/action/userAction";
 import { Button } from "../../ui/button";
 import { updatePopupVisibility } from "@/app/action/popupAction";
 import PublishedCheckbox from "../../ui/published-checkbox";
+import ActionDropdown from "@/components/ui/action-dropdown";
 
 const CurriculumData = () => {
   const [users, setUsers] = useState<any[]>([]);
@@ -37,7 +38,6 @@ const CurriculumData = () => {
           <TableHead>Name</TableHead>
           <TableHead>Icon</TableHead>
           <TableHead>Published</TableHead>
-          <TableHead>Action</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -57,9 +57,7 @@ const CurriculumData = () => {
               />
             </TableCell>
             <TableCell>
-              <Button className="bg-red-600 text-white px-4 py-2 rounded h-5">
-                Delete
-              </Button>
+              <ActionDropdown />
             </TableCell>
           </TableRow>
         ))}

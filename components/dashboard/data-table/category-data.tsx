@@ -1,8 +1,5 @@
-// components/dashboard/CareerTable.tsx
 "use client";
 
-import React, { useEffect, useState } from "react";
-import ConfirmDeleteButton from "@/components/ui/delete-button";
 import {
   Table,
   TableBody,
@@ -11,46 +8,42 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { deleteSlider, getSliderData } from "@/app/action/sliderAction";
+import { Image } from "antd";
+
+import React, { useEffect, useState } from "react";
+import { getUserData } from "@/app/action/userAction";
+import { Button } from "../../ui/button";
 import PublishedCheckbox from "../../ui/published-checkbox";
-import { updateNavbarVisibility } from "@/app/action/navbarAction";
+import { updatePopupVisibility } from "@/app/action/popupAction";
 import ActionDropdown from "@/components/ui/action-dropdown";
 
-export default function CounterTable() {
-  const [sliders, setSliders] = useState<any[]>([]);
+const CategoryData = () => {
+  const [users, setUsers] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getSliderData();
-      setSliders(Array.isArray(data) ? data : []);
+      const data = await getUserData();
+      setUsers(Array.isArray(data) ? data : []);
     };
     fetchData();
   }, []);
 
   const handleToggle = async (id: number | string, value: boolean) => {
-    await updateNavbarVisibility(id, value);
+    await updatePopupVisibility(id, value);
   };
 
   return (
     <Table className="">
       <TableHeader>
         <TableRow>
-          <TableHead>Title</TableHead>
-          <TableHead>Icon</TableHead>
-          <TableHead>Number</TableHead>
+          <TableHead>Name</TableHead>
           <TableHead>Published</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {sliders.map((slider, idx) => (
+        {users.map((user, idx) => (
           <TableRow key={idx}>
-            <TableCell className="font-medium">Students</TableCell>
-            <TableCell>
-              <img className="h-30 bg-gray-300" src="/students.svg" alt="" />
-            </TableCell>
-            <TableCell>
-              <div className="line-clamp-1">1800+</div>
-            </TableCell>
+            <TableCell>School Events</TableCell>
             <TableCell>
               <PublishedCheckbox
                 id=""
@@ -67,4 +60,6 @@ export default function CounterTable() {
       </TableBody>
     </Table>
   );
-}
+};
+
+export default CategoryData;

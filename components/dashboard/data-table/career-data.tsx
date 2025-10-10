@@ -14,6 +14,7 @@ import {
 import { deleteSlider, getSliderData } from "@/app/action/sliderAction";
 import PublishedCheckbox from "../../ui/published-checkbox";
 import { updatePopupVisibility } from "@/app/action/popupAction";
+import ActionDropdown from "@/components/ui/action-dropdown";
 
 type Carrer = {
   id: number;
@@ -47,7 +48,6 @@ export default function CareerTable() {
           <TableHead>Deadline</TableHead>
           <TableHead>Description</TableHead>
           <TableHead>Published</TableHead>
-          <TableHead>Action</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -72,13 +72,14 @@ export default function CareerTable() {
               />
             </TableCell>
             <TableCell>
-              <ConfirmDeleteButton
+              {/* <ConfirmDeleteButton
                 onConfirm={async () => {
                   const res = await deleteSlider(slider.id);
 
                   setSliders((prev) => prev.filter((u) => u.id !== slider.id));
                 }}
-              />
+              /> */}
+              <ActionDropdown />
             </TableCell>
           </TableRow>
         ))}

@@ -12,7 +12,7 @@ import {
 
 import React, { useEffect, useState } from "react";
 import { deleteUser, getUserData } from "@/app/action/userAction";
-import ConfirmDeleteButton from "../../ui/delete-button";
+import ActionDropdown from "@/components/ui/action-dropdown";
 
 const UserData = () => {
   const [users, setUsers] = useState<any[]>([]);
@@ -39,7 +39,8 @@ const UserData = () => {
             <TableCell className="font-medium">{user.name}</TableCell>
             <TableCell>{user.email}</TableCell>
             <TableCell>
-              <ConfirmDeleteButton
+              <ActionDropdown />
+              {/* <ConfirmDeleteButton
                 onConfirm={async () => {
                   try {
                     await deleteUser(user.id); // wait for deletion to complete
@@ -49,7 +50,7 @@ const UserData = () => {
                     console.error("Failed to delete user:", error);
                   }
                 }}
-              />
+              /> */}
             </TableCell>
           </TableRow>
         ))}

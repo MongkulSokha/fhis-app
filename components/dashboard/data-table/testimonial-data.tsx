@@ -17,6 +17,7 @@ import {
 import ConfirmDeleteButton from "../../ui/delete-button";
 import PublishedCheckbox from "../../ui/published-checkbox";
 import { updatePopupVisibility } from "@/app/action/popupAction";
+import ActionDropdown from "@/components/ui/action-dropdown";
 
 const TestimonialData = () => {
   const [testimonials, setTestimonials] = useState<any[]>([]);
@@ -42,7 +43,6 @@ const TestimonialData = () => {
           <TableHead>Postiion</TableHead>
           <TableHead>Description</TableHead>
           <TableHead>Published</TableHead>
-          <TableHead>Action</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -65,7 +65,7 @@ const TestimonialData = () => {
               />
             </TableCell>
             <TableCell>
-              <ConfirmDeleteButton
+              {/* <ConfirmDeleteButton
                 onConfirm={async () => {
                   await deleteTestimonial(testimonial.id);
 
@@ -73,7 +73,8 @@ const TestimonialData = () => {
                     prev.filter((u) => u.id !== testimonial.id)
                   );
                 }}
-              />
+              /> */}
+              <ActionDropdown />
             </TableCell>
           </TableRow>
         ))}
