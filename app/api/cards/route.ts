@@ -1,6 +1,6 @@
 // app/api/cards/route.ts
 import { NextResponse } from "next/server";
-import { getCardData } from "@/app/action/cardDataAction";
+import { getCardData } from "@/app/action/eventAction";
 
 export async function GET() {
   try {

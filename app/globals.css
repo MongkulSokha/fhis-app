@@ -27,6 +27,10 @@ body {
   }
 }
 
+.ant-menu-submenu {
+  padding: 3 !important;
+}
+
 .ant-input {
   color: black !important;
   border-color: white !important;
@@ -37,6 +41,10 @@ body {
   font-size: small;
   opacity: 1;
   border-color: white !important;
+}
+
+.ant-menu-submenu-title {
+  color: white !important;
 }
 
 .ant-menu-submenu-popup .ant-menu {

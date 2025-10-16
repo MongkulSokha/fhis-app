@@ -8,14 +8,15 @@ import { pool } from "@/lib/db";
 //fetch card data
 export async function getTestimonialData() {
   const [rows] = await pool.query(
-    `SELECT id, name, img, position, text, created_at FROM testimonialdata ORDER BY created_at DESC`
+    `SELECT id, name, img, by_position, content, created_at, youtube_link FROM testimonal ORDER BY created_at DESC`
   );
   return rows as {
     id: number;
     name: string;
     img: string;
-    position: string;
-    text: string;
+    by_position: string;
+    content: string;
+    youtube_link: string;
     created_at: string;
   }[];
 }
@@ -49,9 +50,9 @@ export async function createTestimonial(formData: FormData) {
     [name, imgUrl, position, text]
   );
 
-  revalidatePath("/dashboard/testimonial");
+  revalidatePath("/admin/testimonial");
 
-  redirect("/dashboard/testimonial");
+  redirect("/admin/testimonial");
 }
 
 // Delete card

@@ -1,19 +1,19 @@
 import "@ant-design/v5-patch-for-react-19";
-import Navbar from "@/components/homepage/navbars";
-import Corousel from "@/components/homepage/corousels";
-import Footers from "@/components/homepage/footer";
-import CardSlider from "@/components/homepage/profile-slider";
-import CurriculumSlider from "@/components/homepage/curriculum-slider";
-import Welcome from "@/components/homepage/welcome";
-import WhyChooseUs from "@/components/homepage/why-choose";
-import Counter from "@/components/homepage/counter";
-import Gallerys from "@/components/homepage/gallery";
-import CardList from "@/components/homepage/cardlist";
-import TestimonialList from "@/components/homepage/testimoniallist";
-import Popup from "@/components/homepage/popup";
-import Reveal from "@/components/homepage/reveal";
-import TopNavbar from "@/components/homepage/top-navbar";
-import ProfileCard from "@/components/homepage/profile-card";
+import Navbar from "@/components/home/navbars";
+import Corousel from "@/components/home/corousels";
+import Footers from "@/components/home/footer";
+import CardSlider from "@/components/home/profile-slider";
+import CurriculumSlider from "@/components/home/curriculum-slider";
+import Welcome from "@/components/home/welcome";
+import WhyChooseUs from "@/components/home/why-choose";
+import Counter from "@/components/home/counter";
+import Gallerys from "@/components/home/gallery";
+import CardList from "@/components/home/event_list";
+import TestimonialList from "@/components/home/testimoniallist";
+import Popup from "@/components/home/popup";
+import Reveal from "@/components/home/reveal";
+import TopNavbar from "@/components/home/top-navbar";
+import ProfileCard from "@/components/home/profile-card";
 
 export const dynamic = "force-dynamic";
 

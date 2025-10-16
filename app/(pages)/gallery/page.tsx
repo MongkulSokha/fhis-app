@@ -1,8 +1,8 @@
 import "@ant-design/v5-patch-for-react-19";
-import Navbar from "@/components/homepage/navbars";
-import Footers from "@/components/homepage/footer";
-import ActivitiesGallery from "@/components/homepage/activities-gallery";
-import TopNavbar from "@/components/homepage/top-navbar";
+import Navbar from "@/components/home/navbars";
+import Footers from "@/components/home/footer";
+import ActivitiesGallery from "@/components/home/activities-gallery";
+import TopNavbar from "@/components/home/top-navbar";
 
 export default function Gallery() {
   return (

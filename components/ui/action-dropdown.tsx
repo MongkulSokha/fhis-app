@@ -8,8 +8,13 @@ import {
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import { Button } from "./button";
 import { IconDotsVertical } from "@tabler/icons-react";
+import ConfirmDeleteButton from "./delete-button";
 
-const ActionDropdown = () => {
+interface ActionDropdownProps {
+  onConfirmDelete: () => Promise<void> | void;
+}
+
+const ActionDropdown: React.FC<ActionDropdownProps> = ({ onConfirmDelete }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,10 +27,10 @@ const ActionDropdown = () => {
           <span className="sr-only">Open menu</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-32">
-        <DropdownMenuItem>Edit</DropdownMenuItem>
+      <DropdownMenuContent align="end" className="w-32 !text-center">
+        <DropdownMenuItem className=" hover:bg-gray-200">Edit</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
+        <ConfirmDeleteButton onConfirm={onConfirmDelete} />
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -33,7 +33,7 @@ const ConfirmDeleteButton: React.FC<ConfirmDeleteButtonProps> = ({
   confirmLabel = "Delete",
   cancelLabel = "Cancel",
   variant = "outline",
-  className = "bg-red-600 text-white px-4 py-2 rounded h-5",
+  className = "text-start text-sm p-2 w-full hover:bg-red-200 text-black rounded-sm",
 }) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
@@ -62,9 +62,7 @@ const ConfirmDeleteButton: React.FC<ConfirmDeleteButtonProps> = ({
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant={variant} className={className}>
-          {buttonLabel}
-        </Button>
+        <button className={className}>{buttonLabel}</button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

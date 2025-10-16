@@ -8,6 +8,7 @@ import {
   uniqueIndex,
   serial,
   boolean,
+  tinyint,
 } from "drizzle-orm/mysql-core";
 
 // Users table
@@ -15,7 +16,13 @@ export const users = mysqlTable("users", {
   id: int("id").primaryKey().autoincrement(),
   name: varchar("name", { length: 255 }).notNull(),
   email: varchar("email", { length: 255 }).notNull(),
-  passwordHash: text("password_hash").notNull(),
+  profile: varchar("profile", { length: 255 }),
+  is_supperadmin: tinyint("is_supperadmin").default(0).notNull(),
+  email_verified_at: timestamp("email_verified_at"),
+  password: varchar("password", { length: 255 }).notNull(),
+  remember_token: varchar("remember_token", { length: 100 }),
+  created_at: timestamp("created_at"),
+  updated_at: timestamp("updated_at"),
 });
 
 export const schema = { users } as const;
@@ -77,4 +84,11 @@ export const popupdata = mysqlTable("popupdata", {
   id: serial("id").primaryKey(),
   img: text("img").notNull(),
   link: text("link").notNull(),
+});
+
+export const event_category = mysqlTable("event_category", {
+  id: int("id").primaryKey().autoincrement(),
+  category_en: varchar("title", { length: 255 }).notNull(),
+  category_name: varchar("title", { length: 255 }).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });

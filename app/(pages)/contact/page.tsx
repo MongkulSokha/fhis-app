@@ -1,10 +1,10 @@
 import "@ant-design/v5-patch-for-react-19";
-import Navbar from "@/components/homepage/navbars";
-import Footers from "@/components/homepage/footer";
+import Navbar from "@/components/home/navbars";
+import Footers from "@/components/home/footer";
 import { Field, FieldGroup, FieldLabel, FieldSet } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import TopNavbar from "@/components/homepage/top-navbar";
+import TopNavbar from "@/components/home/top-navbar";
 import { Textarea } from "@/components/ui/textarea";
 import { IconMail, IconMapPin, IconPhoneCall } from "@tabler/icons-react";
 

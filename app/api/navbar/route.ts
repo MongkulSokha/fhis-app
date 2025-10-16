@@ -1,6 +1,6 @@
 // app/api/cards/route.ts
 import { NextResponse } from "next/server";
-import { getNavbarItems } from "@/app/action/navbarAction";
+import { getNavbarItems } from "@/app/action/menuAction";
 
 export async function GET() {
   try {

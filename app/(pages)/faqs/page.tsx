@@ -1,8 +1,8 @@
 import "@ant-design/v5-patch-for-react-19";
-import Navbar from "@/components/homepage/navbars";
-import Footers from "@/components/homepage/footer";
+import Navbar from "@/components/home/navbars";
+import Footers from "@/components/home/footer";
 import { Button } from "@/components/ui/button";
-import TopNavbar from "@/components/homepage/top-navbar";
+import TopNavbar from "@/components/home/top-navbar";
 import {
   Collapsible,
   CollapsibleContent,
@@ -35,7 +35,7 @@ export default function AboutUs() {
       <div className="w-100% flex flex-col px-10 sm:px-50 py-10 bg-[#691b32] mb-10">
         <div className="flex flex-col w-full gap-3">
           <Collapsible className="w-full">
-            <CollapsibleTrigger className="w-full">
+            <CollapsibleTrigger className="w-full" asChild>
               <Button className="w-full text-base bg-gray-200 text-black justify-between px-5 sm:px-20 hover:bg-white whitespace-normal h-auto py-3 text-left">
                 <span className="">Who we are?</span>
                 <ChevronsUpDown />
@@ -51,7 +51,7 @@ export default function AboutUs() {
             </CollapsibleContent>
           </Collapsible>
           <Collapsible className="w-full">
-            <CollapsibleTrigger className="w-full">
+            <CollapsibleTrigger className="w-full" asChild>
               <Button className="w-full text-base bg-gray-200 text-black justify-between hover:bg-white whitespace-normal h-auto py-3 text-left">
                 <span className="break-words text-left">
                   How do I know whether I am registered for a training course?

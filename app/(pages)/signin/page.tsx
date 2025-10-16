@@ -30,7 +30,7 @@ export default function SignInPage() {
     });
 
     if (res?.ok) {
-      router.push("/dashboard");
+      router.push("/admin");
     } else {
       alert("Invalid credentials");
     }

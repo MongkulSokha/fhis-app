@@ -4,26 +4,18 @@ import { pool } from "@/lib/db";
 import { put } from "@vercel/blob";
 
 export async function getPopupData() {
-  const [rows] = await pool.query(
-    `SELECT id, img, link, published FROM popupdata WHERE published = 1`
-  );
+  const [rows] = await pool.query(`SELECT id, popup_adv FROM settings`);
   return rows as {
     id: number;
-    img: string;
-    link: string | null;
-    published: boolean | null;
+    popup_adv: string;
   }[];
 }
 
 export async function getVisiblePopupData() {
-  const [rows] = await pool.query(
-    `SELECT id, img, link, published FROM popupdata`
-  );
+  const [rows] = await pool.query(`SELECT id, popup_adv FROM settings`);
   return rows as {
     id: number;
-    img: string;
-    link: string | null;
-    published: boolean | null;
+    popup_adv: string;
   }[];
 }
 

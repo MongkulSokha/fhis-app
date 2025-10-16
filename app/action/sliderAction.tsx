@@ -8,13 +8,13 @@ import { pool } from "@/lib/db";
 //fetch card data
 export async function getSliderData() {
   const [rows] = await pool.query(
-    `SELECT id, title, img, text, created_at FROM sliderdata ORDER BY created_at DESC`
+    `SELECT id, title, image, sub_title, created_at FROM slide ORDER BY created_at ASC`
   );
   return rows as {
     id: number;
     title: string;
-    img: string;
-    text: string;
+    image: string;
+    sub_title: string;
     created_at: string;
   }[];
 }
@@ -47,7 +47,7 @@ export async function createSlider(formData: FormData) {
     [title, imgUrl, text]
   );
 
-  redirect("/dashboard/slider");
+  redirect("/admin/slider");
 }
 
 // Delete card

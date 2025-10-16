@@ -1,6 +1,6 @@
 import "@ant-design/v5-patch-for-react-19";
-import Navbar from "@/components/homepage/navbars";
-import Footers from "@/components/homepage/footer";
+import Navbar from "@/components/home/navbars";
+import Footers from "@/components/home/footer";
 import {
   Field,
   FieldGroup,
@@ -9,9 +9,9 @@ import {
   FieldSet,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "antd";
 import { Button } from "@/components/ui/button";
-import TopNavbar from "@/components/homepage/top-navbar";
+import TopNavbar from "@/components/home/top-navbar";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
@@ -52,11 +52,15 @@ export default function AboutUs() {
                   <div className="flex flex-rows gap-5 items-baseline-last ">
                     <FieldLabel>Sex:</FieldLabel>
                     <div className="flex flex-rows gap-5">
-                      <Checkbox />
+                      <Checkbox
+                        className={` data-[state=checked]:bg-blue-600 data-[state=checked]:text-white data-[state=checked]:border-none`}
+                      />
                       <FieldLabel>Male</FieldLabel>
                     </div>
                     <div className="flex flex-rows gap-5">
-                      <Checkbox />
+                      <Checkbox
+                        className={` data-[state=checked]:bg-blue-600 data-[state=checked]:text-white data-[state=checked]:border-none`}
+                      />
                       <FieldLabel>Female</FieldLabel>
                     </div>
                   </div>
